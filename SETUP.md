@@ -17,6 +17,14 @@ Follow these steps to add the `clinerules` repository as a Git submodule:
     cd path/to/your/project
     ```
 
+**1.b. Initialize Git Repository (if not already initialized):**
+
+*   **Instruction for Jun-san:** If this is a brand new project directory and not yet a Git repository, initialize it now.
+*   **Action for Cline:** (Cline can ask Jun-san if `git init` is needed, or Jun-san can instruct Cline to execute it.)
+    ```bash
+    # Example: git init
+    ```
+
 **2. Add the `clinerules` repository as a Git submodule, tracking the identified target branch:**
 
     *   **Action for Cline:** (Use the branch name obtained in Step 0 for the `-b` parameter in the command below.)
