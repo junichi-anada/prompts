@@ -21,9 +21,9 @@ Follow these steps to add the `clinerules` repository as a Git submodule:
 
     *   **Action for Cline:** (Use the branch name obtained in Step 0 for the `-b` parameter in the command below.)
     ```bash
-    # Example: git submodule add -b <target_branch_name_from_step_0> <このclinerulesリポジトリのHTTPSまたはSSH URL> .clinerules
+    # Example: git submodule add -b <target_branch_name_from_step_0> https://github.com/junichi-anada/prompts.git .clinerules
     ```
-    *   **Instruction for Jun-san (if executing manually):** Replace `<target_branch_name_from_step_0>` with the branch name you want to track (e.g., `rules/projectA`). Replace `<このclinerulesリポジトリのHTTPSまたはSSH URL>` with the actual HTTPS or SSH URL of the `clinerules` repository.
+    *   **Instruction for Jun-san (if executing manually):** Replace `<target_branch_name_from_step_0>` with the branch name you want to track (e.g., `rules/projectA`). Replace `https://github.com/junichi-anada/prompts.git` with the actual HTTPS or SSH URL of the `clinerules` repository.
     *   The `.clinerules` directory is the conventional location for storing Cline rule sets.
 
 **3. Commit the submodule addition:**
