@@ -51,9 +51,11 @@ tags: ["coding-guideline", "documentation", "workflow", "supabase"]
 ... rest of the rule content ...
 ```
 
-* **`description`**: A concise summary of the rule's purpose (as used in this document).
-* **`globs`**: (As seen in `next-js-supabase.md` and this document) An array of file patterns indicating relevance.
-* **Other metadata**: Include `author`, `version`, `tags` as appropriate (see this document's frontmatter for an example).
+* **`description`**: **(Generally required)** Briefly describe the rule's purpose (e.g., "Defines the project's Python linting and formatting standards.").
+* **`author`**: **(Generally required)** Specify the rule's author (e.g., "Jun Ohtani" or "https://github.com/jun-ohtani").
+* **`version`**: **(Generally required)** Indicate the rule's version (e.g., "1.0", "1.1.0").
+* **`tags`**: **(Recommended)** An array of tags to categorize the rule, making related rules easier to find (e.g., `["python", "linting", "formatting", "best-practices"]`).
+* **`globs`**: **(Recommended)** An array of file patterns to which this rule particularly applies. Cline might use this to prioritize or activate rules (e.g., `["**/*.py", "pyproject.toml"]`).
 
 ## 4. Types of ClineRules and Their Structure
 
@@ -99,7 +101,21 @@ Rules that define how Cline manages or improves its own rules or processes.
     * User interaction points (e.g., asking for confirmation).
 * **Example:** `self-improving-cline.md`
 
-## 5. Language and Formatting for AI Guidance
+## 5. Rule Scope and Placement
+
+When creating and placing rules, it's important to consider their nature (e.g., project-specific, common across multiple projects, specific to a technology or tool) and position them appropriately within the `.clinerules` directory.
+
+*   **Root Directory (`.clinerules/`)**:
+    *   For very general common rules or rules defining Cline's basic behavior (e.g., `writing-effective-clinerules.md` itself or `memory-bank.md`).
+    *   For cross-project strategies or protocols (e.g., `project-branching-strategy.md`).
+*   **Subdirectories (e.g., `rules/project-name/`, `rules/technology-name/`)**:
+    *   For rules specific to a particular project.
+    *   For guidelines specific to a particular technology stack, tool, or library.
+    *   Use subdirectories to group related sets of rules for better organization, especially as the ruleset grows.
+
+Appropriate placement aids in rule discoverability, manageability, and proper contextual use by Cline.
+
+## 6. Language and Formatting for AI Guidance
 
 When writing rules intended to directly steer Cline's AI behavior, certain conventions are highly effective:
 
@@ -121,7 +137,7 @@ When writing rules intended to directly steer Cline's AI behavior, certain conve
 * **Specify Tool Usage:**
     * If Cline needs to use a specific tool (e.g., `attempt_completion`, `replace_in_file`, `use_mcp_tool`), explicitly state it and provide any necessary parameters or context for that tool.
 
-## 6. Content Best Practices
+## 7. Content Best Practices
 
 * **Start Broad, Then Narrow:** Begin with a general overview or objective, then delve into specifics.
 * **Use Analogies or Scenarios:** If explaining a complex concept, an analogy or a use-case scenario can be helpful.
@@ -129,11 +145,11 @@ When writing rules intended to directly steer Cline's AI behavior, certain conve
 * **Anticipate Questions:** Try to think about what questions a user (or Cline itself) might have and address them proactively.
 * **Keep it Updated:** As systems or processes change, ensure the relevant `.clinerules` are updated to reflect those changes. The `self-improving-cline.md` rule encourages this.
 
-## 7. Referencing Other Rules
+## 8. Referencing Other Rules
 
 If your rule builds upon or relates to another rule, feel free to reference it by its filename. This helps create a connected knowledge base.
 
-## 8. Testing Your Rule
+## 9. Testing Your Rule
 
 While not always formally testable, consider how your rule will be interpreted:
 * **Human Readability:** Is it clear to another person? If so, it's more likely to be clear to Cline.
