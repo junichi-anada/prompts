@@ -29,6 +29,7 @@ Refer to the main `README.md` in the `.clinerules` repository for instructions o
     * **Emphasis:** Use **bold** and *italics* to highlight important terms or instructions.
 * **Clarity and Precision:** Write in a clear, unambiguous manner. Avoid jargon where possible, or explain it if necessary. If the rule is meant to guide AI behavior, precision is paramount.
 * **Modularity:** Each rule should ideally focus on a specific topic, tool, workflow, or area of knowledge. This makes rules easier to manage, understand, and update.
+* **Language Considerations:** While Cline may have a preferred communication language with the user, rules defining technical specifications, metadata, code comments, or other artifacts should consider using English if it's the common language for that type of content in a broader development context, or if the project has specific language guidelines for such artifacts. This ensures clarity and wider applicability.
 
 ## 3. Frontmatter for Metadata
 

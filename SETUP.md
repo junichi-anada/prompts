@@ -1,3 +1,11 @@
+---
+description: Instructions for incorporating Cline rule sets into your project using Git submodules.
+author: Jun-san
+version: 1.0
+tags: ["cline", "rules", "git", "submodule", "setup"]
+globs: ["SETUP.md", ".gitmodules"]
+---
+
 # Cline Rules Submodule Setup Instructions
 
 This document provides the steps to incorporate a Cline rule set into your development project using Git submodules. This allows Cline to assist you effectively based on a defined set of rules.
@@ -22,7 +30,10 @@ Follow these steps to add the `clinerules` repository as a Git submodule:
 *   **Instruction for Jun-san:** If this is a brand new project directory and not yet a Git repository, initialize it now.
 *   **Action for Cline:** (Cline can ask Jun-san if `git init` is needed, or Jun-san can instruct Cline to execute it.)
     ```bash
-    # Example: git init
+    # Example: git init -b main
+    # (Note: The -b main option requires Git version 2.28 or later.)
+    # For older Git versions, you can initialize with 'git init'
+    # and then rename the branch with 'git branch -m master main'.
     ```
 
 **2. Add the `clinerules` repository as a Git submodule, tracking the identified target branch:**
@@ -45,6 +56,37 @@ Follow these steps to add the `clinerules` repository as a Git submodule:
     git add .clinerules .gitmodules
     git commit -m "feat: Add .clinerules submodule"
     ```
+
+## Organizing Files within the Submodule (Optional)
+
+The `.clinerules` submodule may contain many files. If you want to display only a specific directory (e.g., a nested `.clinerules` directory) within it, you can use Git's sparse checkout feature.
+
+Execute the following commands **from the root of your parent repository**:
+
+1.  **Initialize sparse checkout within the submodule and set the paths to display:**
+    ```bash
+    cd .clinerules
+    # Initialize sparse checkout.
+    # Using --no-cone mode with a specific path pattern is often more reliable
+    # for ensuring only the desired subdirectory within the submodule is checked out.
+    git sparse-checkout init --no-cone
+    # The following command sets only the '.clinerules' directory (and its contents)
+    # located at the root of the submodule to be visible.
+    # Adjust the path "/.clinerules/*" if your target directory has a different name or path.
+    git sparse-checkout set "/.clinerules/*"
+    # After running the above, verify with 'ls -la' in the parent repo's '.clinerules' directory
+    # to ensure only the target directory (e.g., '.clinerules') and '.git' are visible.
+    cd ..
+    ```
+
+2.  **Commit the configuration (in the parent repository):**
+    Changing sparse checkout settings might not alter the submodule's reference commit hash. This commit, therefore, may not always create a new commit, but it's good practice to run it.
+    ```bash
+    git add .clinerules
+    git commit -m "feat: Configure sparse checkout for .clinerules submodule"
+    ```
+
+This will ensure that at the top level of the `.clinerules` submodule directory, only the specified directory (the nested `.clinerules` directory in this example) and files required by Git are visible, keeping your working tree clean.
 
 ## Updating the Rules
 
