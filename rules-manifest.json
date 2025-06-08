@@ -1,0 +1,90 @@
+{
+	"rules": [
+		{
+			"path": ".clinerules/new-task-automation.md",
+			"description": "Workflow for starting new task when context window reaches 50%",
+			"tags": ["context-management", "new-task"]
+		},
+		{
+			"path": ".clinerules/cline-for-research.md",
+			"description": "Guides the user through a research process using available MCP tools, offering choices for refinement, method, and output.",
+			"tags": ["research", "mcp", "workflow", "assistant-behavior"]
+		},
+		{
+			"path": ".clinerules/cline-for-slides.md",
+			"description": "Provides guidelines and best practices for creating and working with Slidev presentation projects.",
+			"tags": ["slidev", "slides", "markdown", "vue", "vite", "guide"]
+		},
+		{
+			"path": ".clinerules/cline-for-webdev-ui.md",
+			"description": "Comprehensive guidelines for maintaining and using the Web Design Bank for consistent UI/UX design across sessions",
+			"tags": ["web-design", "ui-ux", "documentation", "design-system", "accessibility"]
+		},
+		{
+			"path": ".clinerules/comprehensive-slide-dev-guide.md",
+			"description": "A comprehensive guide to crafting high-quality advanced presentations using Slidev, covering advanced syntax, visuals, interactivity, customization, and deployment.",
+			"tags": ["slidev", "guide", "advanced", "presentation", "development"]
+		},
+		{
+			"path": ".clinerules/mcp-development-protocol.md",
+			"description": "Defines the protocol and steps for developing MCP (Model Context Protocol) servers.",
+			"tags": ["mcp", "development", "protocol", "server", "integration"]
+		},
+		{
+			"path": ".clinerules/next-js-supabase.md",
+			"description": "Guidelines for writing Next.js apps with Supabase Auth",
+			"tags": ["nextjs", "supabase", "auth", "ssr", "guide", "best-practices"]
+		},
+		{
+			"path": ".clinerules/gemini-comprehensive-software-engineering-guide.md",
+			"description": "A comprehensive guide to software engineering best practices, covering architecture, debugging, development processes, code quality, collaboration, security, and reliability.",
+			"tags": ["software-engineering", "gemini", "architecture", "development-guide", "code-quality", "security", "reliability"]
+		},
+		{
+			"path": ".clinerules/role/role-waterfall-documenter.md",
+			"description": "Rules for Cline to act as a document creator in waterfall development projects. Supports creation of various design documents.",
+			"tags": ["role", "documenter", "waterfall", "design-document", "markdown", "metadata"]
+		},
+		{
+			"path": ".clinerules/role/role-it-trainer.md",
+			"description": "Rules for Cline to act as an IT training instructor. Supports curriculum planning, implementation guidelines, and creation of slide and text materials.",
+			"tags": ["role", "it-trainer", "training", "curriculum", "slidev", "markdown"]
+		},
+		{
+			"path": ".clinerules/coding/javascript-coding-guidelines.md",
+			"description": "ES6以降のJavaScript開発におけるコーディング規約のベストプラクティスをまとめたよ。Prettierとの連携、可読性、パフォーマンス、保守性を重視したガイドラインだよ！😊",
+			"tags": ["JavaScript", "ES6", "コーディング規約", "ベストプラクティス", "Prettier", "ESLint", "TypeScript"]
+		},
+		{
+			"path": ".clinerules/coding/html5_coding_guidelines.md",
+			"description": "HTML5でウェブページを作る時に、コードをきれいにしたり、みんなが使いやすくしたり、検索エンジンに見つけてもらいやすくするための大事なルールだよ！",
+			"tags": ["HTML5", "コーディング規約", "ベストプラクティス", "ウェブ開発"]
+		},
+		{
+			"path": ".clinerules/coding/css_coding_guidelines.md",
+			"description": "CSSのスタイルを書くときに役立つ、とっておきのベストプラクティスをまとめたよ！これを守ると、コードがもっと読みやすくなって、後から修正するのも楽になるし、みんなで協力して開発するときもスムーズになるんだ！🚀",
+			"tags": ["CSS", "コーディング規約", "ベストプラクティス", "ウェブ開発", "スタイルシート"]
+		},
+		{
+			"path": ".clinerules/coding/php83_coding_guidelines.md",
+			"description": "PHP 8.3のコーディング規約について、PHP-FIGのPSR-1とPSR-12を参考に、分かりやすくまとめたよ！",
+			"tags": ["PHP", "PHP83", "コーディング規約", "ベストプラクティス", "PSR-1", "PSR-12"]
+		},
+		{
+			"path": ".clinerules/database/mysql-laravel12-best-practices.md",
+			"description": "Laravel 12を使った開発でMySQLデータベースを効果的に利用するためのベストプラクティスをまとめたよ！パフォーマンス、保守性、セキュリティを考慮したデータベース設計と操作のヒントが満載だよ！✨",
+			"tags": ["Laravel", "Laravel12", "MySQL", "データベース", "ベストプラクティス", "Eloquent", "クエリビルダ"]
+		},
+		{
+			"path": ".clinerules/tool/docker/docker_coding_guidelines.md",
+			"description": "Dockerのベストプラクティスについてまとめたよ！これを参考に、もっと効率的で安全なDockerイメージを作れるようになるはずだよ！🚀",
+			"tags": ["Docker", "ベストプラクティス", "コンテナ", "Dockerfile", "CI/CD"]
+		},
+		{
+			"path": ".clinerules/tool/GitHub/workflows/pr-review-cline.md",
+			"description": "A detailed workflow for Cline (the AI assistant) to review Pull Requests specifically for the Cline project, utilizing the gh CLI and internal knowledge.",
+			"tags": ["pr review", "github", "cline project", "ai workflow", "gh cli"]
+		}
+	]
+}
+
