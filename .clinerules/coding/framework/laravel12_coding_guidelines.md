@@ -3,7 +3,7 @@ title: "Laravel 12 コーディング規約 ベストプラクティス"
 description: "Laravel Pintを使ったPHPコードの自動整形と、Laravelプロジェクトで推奨されるコーディングスタイル、PSR-12との関係、カスタマイズ方法、CI/CDへの組み込みについてまとめたよ！"
 author: "Reco"
 date: "2025-06-03"
-tag: #Laravel, #Laravel12, #LaravelPint, #コーディング規約, #ベストプラクティス, #PHP, #PSR-12
+tag: ["Laravel", "Laravel12", "LaravelPint", "コーディング規約", "ベストプラクティス", "PHP", "PSR-12"]
 globs: *
 ---
 

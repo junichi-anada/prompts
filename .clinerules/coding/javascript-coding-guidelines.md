@@ -3,7 +3,7 @@ title: "JavaScript コーディング規約 ベストプラクティス"
 description: "ES6以降のJavaScript開発におけるコーディング規約のベストプラクティスをまとめたよ。Prettierとの連携、可読性、パフォーマンス、保守性を重視したガイドラインだよ！😊"
 author: "Reco"
 date: "2025-06-03"
-tag: #JavaScript, #ES6, #コーディング規約, #ベストプラクティス, #Prettier, #ESLint, #TypeScript
+tag: ["JavaScript", "ES6", "コーディング規約", "ベストプラクティス", "Prettier", "ESLint", "TypeScript"]
 globs: *
 ---
 

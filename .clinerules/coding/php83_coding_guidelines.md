@@ -3,7 +3,7 @@ title: "PHP 8.3 コーディング規約 ベストプラクティス"
 description: "PHP 8.3のコーディング規約について、PHP-FIGのPSR-1とPSR-12を参考に、分かりやすくまとめたよ！"
 author: "Reco"
 date: "2025-06-03"
-tag: #PHP, #PHP83, #コーディング規約, #ベストプラクティス, #PSR-1, #PSR-12
+tag: ["PHP", "PHP83", "コーディング規約", "ベストプラクティス", "PSR-1", "PSR-12"]
 globs: *
 ---
 

@@ -3,7 +3,7 @@ title: "Laravel 12 + MySQL ベストプラクティス"
 description: "Laravel 12を使った開発でMySQLデータベースを効果的に利用するためのベストプラクティスをまとめたよ！パフォーマンス、保守性、セキュリティを考慮したデータベース設計と操作のヒントが満載だよ！✨"
 author: "Reco"
 date: "2025-06-03"
-tag: #Laravel, #Laravel12, #MySQL, #データベース, #ベストプラクティス, #Eloquent, #クエリビルダ
+tag: ["Laravel", "Laravel12", "MySQL", "データベース", "ベストプラクティス", "Eloquent", "クエリビルダ"]
 globs: *
 ---
 
