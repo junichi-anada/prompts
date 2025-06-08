@@ -1,6 +1,36 @@
 {
 	"rules": [
 		{
+			"path": ".clinerules/coding/c#-guide.md",
+			"description": "A comprehensive guide to mastering C# for developers with Python and TypeScript backgrounds.",
+			"tags": ["csharp", ".net", "guide", "programming-language", "typescript-transition", "python-transition"]
+		},
+		{
+			"path": ".clinerules/coding/css_coding_guidelines.md",
+			"description": "CSSのスタイルを書くときに役立つ、とっておきのベストプラクティスをまとめたよ！これを守ると、コードがもっと読みやすくなって、後から修正するのも楽になるし、みんなで協力して開発するときもスムーズになるんだ！🚀",
+			"tags": ["CSS", "コーディング規約", "ベストプラクティス", "ウェブ開発", "スタイルシート"]
+		},
+		{
+			"path": ".clinerules/coding/html5_coding_guidelines.md",
+			"description": "HTML5でウェブページを作る時に、コードをきれいにしたり、みんなが使いやすくしたり、検索エンジンに見つけてもらいやすくするための大事なルールだよ！",
+			"tags": ["HTML5", "コーディング規約", "ベストプラクティス", "ウェブ開発"]
+		},
+		{
+			"path": ".clinerules/coding/javascript-coding-guidelines.md",
+			"description": "ES6以降のJavaScript開発におけるコーディング規約のベストプラクティスをまとめたよ。Prettierとの連携、可読性、パフォーマンス、保守性を重視したガイドラインだよ！😊",
+			"tags": ["JavaScript", "ES6", "コーディング規約", "ベストプラクティス", "Prettier", "ESLint", "TypeScript"]
+		},
+		{
+			"path": ".clinerules/coding/php83_coding_guidelines.md",
+			"description": "PHP 8.3のコーディング規約について、PHP-FIGのPSR-1とPSR-12を参考に、分かりやすくまとめたよ！",
+			"tags": ["PHP", "PHP83", "コーディング規約", "ベストプラクティス", "PSR-1", "PSR-12"]
+		},
+		{
+			"path": ".clinerules/coding/uv-python-usage-guide.md",
+			"description": "A comprehensive guide to using UV for Python project management, covering installation, environment management, package handling, and best practices.",
+			"tags": ["uv", "python", "package-manager", "venv", "guide"]
+		},
+		{
 			"path": ".clinerules/new-task-automation.md",
 			"description": "Workflow for starting new task when context window reaches 50%",
 			"tags": ["context-management", "new-task"]
@@ -51,26 +81,6 @@
 			"tags": ["role", "it-trainer", "training", "curriculum", "slidev", "markdown"]
 		},
 		{
-			"path": ".clinerules/coding/javascript-coding-guidelines.md",
-			"description": "ES6以降のJavaScript開発におけるコーディング規約のベストプラクティスをまとめたよ。Prettierとの連携、可読性、パフォーマンス、保守性を重視したガイドラインだよ！😊",
-			"tags": ["JavaScript", "ES6", "コーディング規約", "ベストプラクティス", "Prettier", "ESLint", "TypeScript"]
-		},
-		{
-			"path": ".clinerules/coding/html5_coding_guidelines.md",
-			"description": "HTML5でウェブページを作る時に、コードをきれいにしたり、みんなが使いやすくしたり、検索エンジンに見つけてもらいやすくするための大事なルールだよ！",
-			"tags": ["HTML5", "コーディング規約", "ベストプラクティス", "ウェブ開発"]
-		},
-		{
-			"path": ".clinerules/coding/css_coding_guidelines.md",
-			"description": "CSSのスタイルを書くときに役立つ、とっておきのベストプラクティスをまとめたよ！これを守ると、コードがもっと読みやすくなって、後から修正するのも楽になるし、みんなで協力して開発するときもスムーズになるんだ！🚀",
-			"tags": ["CSS", "コーディング規約", "ベストプラクティス", "ウェブ開発", "スタイルシート"]
-		},
-		{
-			"path": ".clinerules/coding/php83_coding_guidelines.md",
-			"description": "PHP 8.3のコーディング規約について、PHP-FIGのPSR-1とPSR-12を参考に、分かりやすくまとめたよ！",
-			"tags": ["PHP", "PHP83", "コーディング規約", "ベストプラクティス", "PSR-1", "PSR-12"]
-		},
-		{
 			"path": ".clinerules/database/mysql-laravel12-best-practices.md",
 			"description": "Laravel 12を使った開発でMySQLデータベースを効果的に利用するためのベストプラクティスをまとめたよ！パフォーマンス、保守性、セキュリティを考慮したデータベース設計と操作のヒントが満載だよ！✨",
 			"tags": ["Laravel", "Laravel12", "MySQL", "データベース", "ベストプラクティス", "Eloquent", "クエリビルダ"]
@@ -84,6 +94,56 @@
 			"path": ".clinerules/tool/GitHub/workflows/pr-review-cline.md",
 			"description": "A detailed workflow for Cline (the AI assistant) to review Pull Requests specifically for the Cline project, utilizing the gh CLI and internal knowledge.",
 			"tags": ["pr review", "github", "cline project", "ai workflow", "gh cli"]
+		},
+		{
+			"path": ".clinerules/core-behavior/cline-architecture.md",
+			"description": "Defines Cline's extension architecture, components, data flow, and development guidelines.",
+			"tags": ["architecture", "development-guide", "extension", "vscode", "core-behavior"]
+		},
+		{
+			"path": ".clinerules/core-behavior/cline-communication-style.md",
+			"description": "レコとJunのコミュニケーションスタイル、レコの役割、そしてレコがJunをサポートするための特定の機能についてまとめたガイドラインだよ。これはグローバルなルールとして適用されるよ。",
+			"tags": ["コミュニケーション", "スタイルガイド", "レコ", "Jun", "AIエージェント"]
+		},
+		{
+			"path": ".clinerules/core-behavior/cline-continuous-improvement-protocol.md",
+			"description": "Defines Cline's mandatory protocol for self-reflection, persistent knowledge capture using dedicated logs, and continuous improvement of its operational knowledge before task completion.",
+			"tags": ["protocol", "meta", "learning", "reflection", "knowledge-management", "core-behavior"]
+		},
+		{
+			"path": ".clinerules/core-behavior/memory-bank.md",
+			"description": "Describes Cline's Memory Bank system, its structure, and workflows for maintaining project knowledge across sessions.",
+			"tags": ["memory-bank", "knowledge-base", "core-behavior", "documentation-protocol"]
+		},
+		{
+			"path": ".clinerules/core-behavior/self-improving-cline.md",
+			"description": "Defines a process for Cline to reflect on interactions and suggest improvements to active .clinerules.",
+			"tags": ["meta", "self-improvement", "clinerules", "reflection", "core-behavior"]
+		},
+		{
+			"path": ".clinerules/core-behavior/writing/writing-effective-clinerules.md",
+			"description": "Guidelines and best practices for creating effective .clinerules to guide Cline's behavior, knowledge, and workflows.",
+			"tags": ["meta", "guideline", "clinerules", "documentation", "best-practices"]
+		},
+		{
+			"path": ".clinerules/core-behavior/optional/appendix-self-improving-cline.md",
+			"description": "Appendix proposing improvements to self-improving-cline.md regarding fork management context awareness.",
+			"tags": ["appendix", "suggestion", "fork-management", "self-improvement", "meta", "clinerules"]
+		},
+		{
+			"path": ".clinerules/core-behavior/optional/rule-improvement-appendix-protocol.md",
+			"description": "Defines the protocol for creating appendix files to document proposed improvements to other .clinerules, especially in forked repositories, avoiding direct modification conflicts.",
+			"tags": ["meta", "clinerules", "improvement", "documentation", "protocol", "fork-management"]
+		},
+		{
+			"path": ".clinerules/core-behavior/MCP/sequential-thinking.md",
+			"description": "A guide for effectively using the sequentialthinking MCP tool for dynamic and reflective problem-solving.",
+			"tags": ["mcp", "sequentialthinking", "problem-solving", "workflow-guide", "ai-guidance"]
+		},
+		{
+			"path": ".clinerules/coding/framework/laravel12_coding_guidelines.md",
+			"description": "Laravel Pintを使ったPHPコードの自動整形と、Laravelプロジェクトで推奨されるコーディングスタイル、PSR-12との関係、カスタマイズ方法、CI/CDへの組み込みについてまとめたよ！",
+			"tags": ["Laravel", "Laravel12", "LaravelPint", "コーディング規約", "ベストプラクティス", "PHP", "PSR-12"]
 		}
 	]
 }
