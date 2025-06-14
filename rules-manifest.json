@@ -6,12 +6,12 @@
 			"tags": ["csharp", ".net", "guide", "programming-language", "typescript-transition", "python-transition"]
 		},
 		{
-			"path": ".clinerules/coding/css_coding_guidelines.md",
+			"path": ".clinerules/coding/css-coding-guidelines.md",
 			"description": "CSSのスタイルを書くときに役立つ、とっておきのベストプラクティスをまとめたよ！これを守ると、コードがもっと読みやすくなって、後から修正するのも楽になるし、みんなで協力して開発するときもスムーズになるんだ！🚀",
 			"tags": ["CSS", "コーディング規約", "ベストプラクティス", "ウェブ開発", "スタイルシート"]
 		},
 		{
-			"path": ".clinerules/coding/html5_coding_guidelines.md",
+			"path": ".clinerules/coding/html5-coding-guidelines.md",
 			"description": "HTML5でウェブページを作る時に、コードをきれいにしたり、みんなが使いやすくしたり、検索エンジンに見つけてもらいやすくするための大事なルールだよ！",
 			"tags": ["HTML5", "コーディング規約", "ベストプラクティス", "ウェブ開発"]
 		},
@@ -21,7 +21,7 @@
 			"tags": ["JavaScript", "ES6", "コーディング規約", "ベストプラクティス", "Prettier", "ESLint", "TypeScript"]
 		},
 		{
-			"path": ".clinerules/coding/php83_coding_guidelines.md",
+			"path": ".clinerules/coding/php83-coding-guidelines.md",
 			"description": "PHP 8.3のコーディング規約について、PHP-FIGのPSR-1とPSR-12を参考に、分かりやすくまとめたよ！",
 			"tags": ["PHP", "PHP83", "コーディング規約", "ベストプラクティス", "PSR-1", "PSR-12"]
 		},
@@ -86,7 +86,7 @@
 			"tags": ["Laravel", "Laravel12", "MySQL", "データベース", "ベストプラクティス", "Eloquent", "クエリビルダ"]
 		},
 		{
-			"path": ".clinerules/tool/docker/docker_coding_guidelines.md",
+			"path": ".clinerules/tool/docker/docker-coding-guidelines.md",
 			"description": "Dockerのベストプラクティスについてまとめたよ！これを参考に、もっと効率的で安全なDockerイメージを作れるようになるはずだよ！🚀",
 			"tags": ["Docker", "ベストプラクティス", "コンテナ", "Dockerfile", "CI/CD"]
 		},
@@ -141,7 +141,7 @@
 			"tags": ["mcp", "sequentialthinking", "problem-solving", "workflow-guide", "ai-guidance"]
 		},
 		{
-			"path": ".clinerules/coding/framework/laravel12_coding_guidelines.md",
+			"path": ".clinerules/coding/framework/laravel12-coding-guidelines.md",
 			"description": "Laravel Pintを使ったPHPコードの自動整形と、Laravelプロジェクトで推奨されるコーディングスタイル、PSR-12との関係、カスタマイズ方法、CI/CDへの組み込みについてまとめたよ！",
 			"tags": ["Laravel", "Laravel12", "LaravelPint", "コーディング規約", "ベストプラクティス", "PHP", "PSR-12"]
 		}
