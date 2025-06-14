@@ -1,52 +1,95 @@
-# My Prompts Rule Source (Fork of cline/prompts)
+# My Prompts Rule Source (cline/promptsのフォーク)
 
-This repository is a fork of the original [cline/prompts](https://github.com/cline/prompts.git).
+このリポジトリは、オリジナルの [cline/prompts](https://github.com/cline/prompts.git) リポジトリのフォークです。
 
-## Purpose
+## 目的
 
-The primary purpose of this fork is to serve as a source for my custom `.clinerules` that can be selectively copied into my other projects. It also allows syncing with the upstream `cline/prompts` repository to get the latest rules without directly modifying this fork's main branches.
+このフォークの主な目的は、Jun様のカスタム`.clinerules`のソースとして機能し、他のプロジェクトに選択的にコピーできるようにすることです。また、このフォークのメインブランチを直接変更することなく、アップストリームの`cline/prompts`リポジトリから最新のルールを同期することも可能です。
 
-## Workflow
+## ワークフロー
 
-### 1. Syncing with Upstream
+### 1. アップストリームとの同期
 
-To get the latest rules from the original `cline/prompts` repository:
+オリジナルの`cline/prompts`リポジトリから最新のルールを取得するには、以下の手順を実行します。
 
-1.  Ensure the `upstream` remote is configured:
+1.  `upstream`リモートが設定されていることを確認します。
     ```bash
     git remote add upstream https://github.com/cline/prompts.git
-    # (If it already exists, this command will notify you)
+    # (既に存在する場合、このコマンドは通知します)
     ```
-2.  Checkout the `main` branch:
+2.  `main`ブランチにチェックアウトします。
     ```bash
     git checkout main
     ```
-3.  Fetch and merge the latest changes from the upstream repository:
+3.  アップストリームリポジトリから最新の変更をフェッチしてマージします。
     ```bash
     git fetch upstream
-    git merge upstream/main # Or the relevant branch from upstream
-    # Resolve any conflicts if necessary
+    git merge upstream/main # またはアップストリームの関連ブランチ
+    # 必要に応じて競合を解決します
     ```
-    The `main` branch now contains the latest rules from `cline/prompts`.
+    これで、`main`ブランチには`cline/prompts`からの最新のルールが含まれます。
 
-### 2. Utilizing Rules in Other Projects
+### 2. ルールをプロジェクトに適用する
 
-To use rules from this repository in another project (e.g., `/path/to/your/project`):
+このリポジトリは、Jun様のプロジェクトでClineの動作をカスタマイズするための`.clinerules`を管理しています。`rules-manifest.json`ファイルを参照することで、利用可能なルールとその詳細を確認できます。
 
-1.  Navigate to your target project's directory:
-    ```bash
-    cd /path/to/your/project
-    ```
-2.  Ensure the `.clinerules` directory exists:
-    ```bash
-    mkdir -p .clinerules
-    ```
-3.  Copy the required rule files from the `my-rules` branch of *this* repository (e.g., `/path/to/this/fork`) to your target project's `.clinerules` directory:
-    ```bash
-# Example: Copying a specific rule file
-cp /home/rbsdev/Project/prompts/.clinerules/some-rule.md ./clinerules/
+#### `rules-manifest.json`について
 
-# Example: Copying a rule directory
-cp -r /home/rbsdev/Project/prompts/.clinerules/some-rule-directory ./clinerules/
+`rules-manifest.json`は、このリポジリで提供されているすべてのルールファイルのリストと、それぞれのメタデータ（説明やタグなど）をまとめたファイルです。このファイルを見ることで、Jun様のプロジェクトに必要なルールを簡単に見つけることができます。
+
+各ルールエントリは以下の情報を含んでいます：
+*   `path`: ルールファイルへの相対パス。
+*   `description`: ルールの簡単な説明。
+*   `tags`: ルールに関連するキーワードやカテゴリ。
+
+#### ルールファイルのダウンロード/コピー方法
+
+必要なルールファイルをJun様のプロジェクトに適用する方法はいくつかあります。
+
+##### 1. 手動でコピーする
+
+このリポジリをクローンした後、`my-rules`ブランチから必要なファイルを直接Jun様のプロジェクトの`.clinerules`ディレクトリにコピーできます。
+
+```bash
+# まず、このリポジリをクローンする（まだの場合）
+git clone https://github.com/junichi-anada/prompts.git
+cd prompts
+
+# my-rulesブランチに切り替える
+git checkout my-rules
+
+# Jun様のプロジェクトディレクトリに移動する
+cd /path/to/your/project
+
+# .clinerulesディレクトリが存在することを確認する
+mkdir -p .clinerules
+
+# 必要なルールファイルをコピーする例
+# 例1: 特定のルールファイルをコピー
+cp /home/rbsdev/Project/prompts/.clinerules/coding/javascript-coding-guidelines.md ./clinerules/
+
+# 例2: ルールディレクトリ全体をコピー
+cp -r /home/rbsdev/Project/prompts/.clinerules/core-behavior ./clinerules/
 ```
-    *(このリポジトリの実際のパス: `/home/rbsdev/Project/prompts`)*
+
+##### 2. GitHub APIを使って直接ダウンロードする（上級者向け）
+
+リポジリ全体をクローンしなくても、GitHubのRawファイルURLを使って特定のルールファイルを直接ダウンロードすることもできます。これは、スクリプトなどで自動化したい場合に便利です。
+
+`rules-manifest.json`の`path`情報と、このリポジリのGitHub URL（`https://raw.githubusercontent.com/junichi-anada/prompts/my-rules/`）を組み合わせることで、各ルールファイルのRaw URLを構築できます。
+
+```bash
+# 例: JavaScriptのコーディング規約をダウンロードする
+# rules-manifest.jsonからパスを取得: .clinerules/coding/javascript-coding-guidelines.md
+# Raw URLを構築: https://raw.githubusercontent.com/junichi-anada/prompts/my-rules/.clinerules/coding/javascript-coding-guidelines.md
+
+# curlを使ってダウンロードする例
+mkdir -p /path/to/your/project/.clinerules/coding/
+curl -o /path/to/your/project/.clinerules/coding/javascript-coding-guidelines.md \
+"https://raw.githubusercontent.com/junichi-anada/prompts/my-rules/.clinerules/coding/javascript-coding-guidelines.md"
+
+# wgetを使ってダウンロードする例
+# mkdir -p /path/to/your/project/.clinerules/coding/
+# wget -O /path/to/your/project/.clinerules/coding/javascript-coding-guidelines.md \
+# "https://raw.githubusercontent.com/junichi-anada/prompts/my-rules/.clinerules/coding/javascript-coding-guidelines.md"
+```
