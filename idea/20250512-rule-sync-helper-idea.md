@@ -6,7 +6,7 @@
 
 **Idea:**
 
-Create a custom `.clinerule` that assists in synchronizing rule sets from the central source repository (specifically, the `upstream-sync` branch) to target projects.
+Create a custom `.clinerule` that assists in synchronizing rule sets from the central source repository (specifically, the `my-rules` branch) to target projects.
 
 **Potential Features:**
 
@@ -14,7 +14,7 @@ Create a custom `.clinerule` that assists in synchronizing rule sets from the ce
 2.  **Target Project Specification:** The user specifies the target project directory path.
 3.  **Rule Set Selection:** The user selects one or more predefined rule sets to sync.
 4.  **Sync Execution:**
-    *   The rule uses `execute_command` to run `cp` commands (or potentially `rsync` for more advanced diffing/syncing) to copy the selected rule files/directories from the source repository path (on the `upstream-sync` branch) to the target project's `.clinerules` directory.
+    *   The rule uses `execute_command` to run `cp` commands (or potentially `rsync` for more advanced diffing/syncing) to copy the selected rule files/directories from the source repository path (on the `my-rules` branch) to the target project's `.clinerules` directory.
     *   Could include options like `--overwrite` or `--dry-run`.
 5.  **Difference Check (Advanced):** Potentially use `diff` command via `execute_command` to show differences before overwriting, or even attempt a basic merge for simple changes (though merging markdown might be complex).
 
