@@ -92,6 +92,7 @@ curl -o /path/to/your/project/.clinerules/coding/javascript-coding-guidelines.md
 # mkdir -p /path/to/your/project/.clinerules/coding/
 # wget -O /path/to/your/project/.clinerules/coding/javascript-coding-guidelines.md \
 # "https://raw.githubusercontent.com/junichi-anada/prompts/my-rules/.clinerules/coding/javascript-coding-guidelines.md"
+```
 
 ### 3. プロジェクトからのルール更新 (PR経由)
 
