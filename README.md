@@ -92,4 +92,44 @@ curl -o /path/to/your/project/.clinerules/coding/javascript-coding-guidelines.md
 # mkdir -p /path/to/your/project/.clinerules/coding/
 # wget -O /path/to/your/project/.clinerules/coding/javascript-coding-guidelines.md \
 # "https://raw.githubusercontent.com/junichi-anada/prompts/my-rules/.clinerules/coding/javascript-coding-guidelines.md"
+
+### 3. プロジェクトからのルール更新 (PR経由)
+
+各プロジェクトでルールファイルを修正・改善した場合、その変更をこの中央リポジトリに反映させることで、他のプロジェクトでも最新のルールを利用できるようになります。
+
+変更履歴を明確に残すために、**プルリクエスト (Pull Request) を作成する**ことを推奨します。
+
+1.  **このリポジトリのローカルディレクトリに移動します。**
+    ```bash
+    cd /home/rbsdev/Project/prompts
+    ```
+
+2.  **`my-rules`ブランチから、作業用の新しいブランチを作成します。**
+    ブランチ名は、変更内容が分かるように `feature/update-js-rules` のようにするのがおすすめです。
+    ```bash
+    git checkout my-rules
+    git pull origin my-rules
+    git checkout -b feature/update-js-rules
+    ```
+
+3.  **更新したルールファイルを、作業していたプロジェクトからこのリポジトリにコピーします。**
+    ```bash
+    # 例: javascript-coding-guidelines.md を更新した場合
+    cp /path/to/your/project/.clinerules/coding/javascript-coding-guidelines.md ./.clinerules/coding/
+    ```
+
+4.  **変更をコミットして、新しいブランチをリモートリポジトリにプッシュします。**
+    ```bash
+    git add .
+    git commit -m "feat(rules): JavaScriptのコーディング規約を更新"
+    git push origin feature/update-js-rules
+    ```
+
+5.  **GitHub上でプルリクエストを作成します。**
+    *   `feature/update-js-rules` ブランチから `my-rules` ブランチへのプルリクエストを作成します。
+    *   PRのタイトルや説明に、変更の概要や理由を記述します。
+
+6.  **プルリクエストをマージします。**
+    *   内容を確認した後、GitHub上でPRをマージします。
+    *   マージ後、作業ブランチは削除してOKです。
 ```
