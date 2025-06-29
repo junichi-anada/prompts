@@ -26,6 +26,11 @@
 			"tags": ["PHP", "PHP83", "コーディング規約", "ベストプラクティス", "PSR-1", "PSR-12"]
 		},
 		{
+			"path": ".clinerules/coding/tailwindcss-coding-guidelines.md",
+			"description": "TailwindCSSのベストプラクティスをまとめたよ！ユーティリティファーストのアプローチを最大限に活用して、効率的で保守性の高いCSSを書くためのヒントが満載だよ！🚀",
+			"tags": ["TailwindCSS", "CSS", "コーディング規約", "ベストプラクティス", "フロントエンド"]
+		},
+		{
 			"path": ".clinerules/coding/uv-python-usage-guide.md",
 			"description": "A comprehensive guide to using UV for Python project management, covering installation, environment management, package handling, and best practices.",
 			"tags": ["uv", "python", "package-manager", "venv", "guide"]
@@ -59,6 +64,11 @@
 			"path": ".clinerules/mcp-development-protocol.md",
 			"description": "Defines the protocol and steps for developing MCP (Model Context Protocol) servers.",
 			"tags": ["mcp", "development", "protocol", "server", "integration"]
+		},
+		{
+			"path": ".clinerules/workflows/create-new-clinerule.md",
+			"description": "新しい.clinerulesファイルを作成し、rules-manifest.jsonに登録するまでの標準的なワークフローだよ。",
+			"tags": ["workflow", "clinerules", "development-process"]
 		},
 		{
 			"path": ".clinerules/next-js-supabase.md",
