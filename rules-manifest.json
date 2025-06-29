@@ -144,6 +144,16 @@
 			"path": ".clinerules/coding/framework/laravel12-coding-guidelines.md",
 			"description": "Laravel Pintを使ったPHPコードの自動整形と、Laravelプロジェクトで推奨されるコーディングスタイル、PSR-12との関係、カスタマイズ方法、CI/CDへの組み込みについてまとめたよ！",
 			"tags": ["Laravel", "Laravel12", "LaravelPint", "コーディング規約", "ベストプラクティス", "PHP", "PSR-12"]
+		},
+		{
+			"path": ".clinerules/tool/GitHub/github_actions.md",
+			"description": "GitHub Actionsのワークフローにおけるツール実行パスの指定や、CI/CD環境での一貫した実行を保証するためのルールをまとめたよ！",
+			"tags": ["GitHub Actions", "CI/CD", "ベストプラクティス", "ワークフロー"]
+		},
+		{
+			"path": ".clinerules/tool/GitHub/github_flow.md",
+			"description": "GitHub Actionsのワークフローにおけるツール実行パスの指定や、CI/CD環境での一貫した実行を保証するためのルールをまとめたよ！",
+			"tags": ["GitHub", "CI/CD", "ベストプラクティス", "ワークフロー", "ブランチ管理"]
 		}
 	]
 }
