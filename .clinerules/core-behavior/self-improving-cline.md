@@ -9,7 +9,9 @@ globs: ["*"]
 
 **Objective:** Offer opportunities to continuously improve `.clinerules` based on user interactions and feedback.
 
-**Trigger:** Before using the `attempt_completion` tool for any task that involved user feedback provided at any point during the conversation, or involved multiple non-trivial steps (e.g., multiple file edits, complex logic generation).
+**Trigger:**
+- Before using the `attempt_completion` tool for any task that involved user feedback provided at any point during the conversation, or involved multiple non-trivial steps (e.g., multiple file edits, complex logic generation).
+- **Additionally, if explicit user feedback is provided requesting self-improvement or rule modification at any point during the task.**
 
 **Process:**
 
