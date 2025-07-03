@@ -1,187 +1,237 @@
 {
+	"version": "1.0.0",
 	"rules": [
 		{
 			"path": ".clinerules/cline-for-research.md",
+			"version": "1.0",
 			"description": "Guides the user through a research process using available MCP tools, offering choices for refinement, method, and output.",
 			"tags": ["research", "mcp", "workflow", "assistant-behavior"]
 		},
 		{
 			"path": ".clinerules/cline-for-slides.md",
+			"version": "1.0",
 			"description": "Provides guidelines and best practices for creating and working with Slidev presentation projects.",
 			"tags": ["slidev", "slides", "markdown", "vue", "vite", "guide"]
 		},
 		{
 			"path": ".clinerules/cline-for-webdev-ui.md",
+			"version": "1.0",
 			"description": "Comprehensive guidelines for maintaining and using the Web Design Bank for consistent UI/UX design across sessions",
 			"tags": ["web-design", "ui-ux", "documentation", "design-system", "accessibility"]
 		},
 		{
 			"path": ".clinerules/coding/c#-guide.md",
+			"version": "1.0 # Placeholder for version",
 			"description": "A comprehensive guide to mastering C# for developers with Python and TypeScript backgrounds.",
 			"tags": ["csharp", ".net", "guide", "programming-language", "typescript-transition", "python-transition"]
 		},
 		{
 			"path": ".clinerules/coding/css-coding-guidelines.md",
+			"version": "1.0",
 			"description": "CSSのスタイルを書くときに役立つ、とっておきのベストプラクティスをまとめたよ！これを守ると、コードがもっと読みやすくなって、後から修正するのも楽になるし、みんなで協力して開発するときもスムーズになるんだ！🚀",
-			"tags": ["CSS", "コーディング規約", "ベストプラクティス", "ウェブ開発", "スタイルシート"]
+			"tags": []
+		},
+		{
+			"path": ".clinerules/coding/framework/laravel-testing-guidelines.md",
+			"version": "1.0",
+			"description": "LaravelプロジェクトでPHPUnitテストを実行する際の、特にデータベース関連の一般的な問題とその解決策をまとめたよ！",
+			"tags": []
 		},
 		{
 			"path": ".clinerules/coding/framework/laravel11-coding-guidelines.md",
+			"version": "1.0",
 			"description": "Laravel 11のコーディング規約のベストプラクティスをまとめたよ！PSR-12準拠の規約から、MVCの各コンポーネント、テストまで、Laravel開発の品質を高めるためのヒントが満載だよ！",
-			"tags": ["Laravel", "Laravel11", "コーディング規約", "ベストプラクティス", "PHP", "PSR-12"]
+			"tags": []
 		},
 		{
 			"path": ".clinerules/coding/framework/laravel12-coding-guidelines.md",
+			"version": "1.0",
 			"description": "Laravel Pintを使ったPHPコードの自動整形と、Laravelプロジェクトで推奨されるコーディングスタイル、PSR-12との関係、カスタマイズ方法、CI/CDへの組み込みについてまとめたよ！",
-			"tags": ["Laravel", "Laravel12", "LaravelPint", "コーディング規約", "ベストプラクティス", "PHP", "PSR-12"]
+			"tags": []
 		},
 		{
 			"path": ".clinerules/coding/html5-coding-guidelines.md",
+			"version": "1.0",
 			"description": "HTML5でウェブページを作る時に、コードをきれいにしたり、みんなが使いやすくしたり、検索エンジンに見つけてもらいやすくするための大事なルールだよ！",
-			"tags": ["HTML5", "コーディング規約", "ベストプラクティス", "ウェブ開発"]
+			"tags": []
 		},
 		{
 			"path": ".clinerules/coding/javascript-coding-guidelines.md",
+			"version": "1.0",
 			"description": "ES6以降のJavaScript開発におけるコーディング規約のベストプラクティスをまとめたよ。Prettierとの連携、可読性、パフォーマンス、保守性を重視したガイドラインだよ！😊",
-			"tags": ["JavaScript", "ES6", "コーディング規約", "ベストプラクティス", "Prettier", "ESLint", "TypeScript"]
+			"tags": []
+		},
+		{
+			"path": ".clinerules/coding/laravel11-coding-guidelines.md",
+			"version": "1.0",
+			"description": "Laravel 11のコーディング規約のベストプラクティスをまとめたよ！PSR-12準拠の規約から、MVCの各コンポーネント、テストまで、Laravel開発の品質を高めるためのヒントが満載だよ！",
+			"tags": []
 		},
 		{
 			"path": ".clinerules/coding/php83-coding-guidelines.md",
+			"version": "1.0",
 			"description": "PHP 8.3のコーディング規約について、PHP-FIGのPSR-1とPSR-12を参考に、分かりやすくまとめたよ！",
-			"tags": ["PHP", "PHP83", "コーディング規約", "ベストプラクティス", "PSR-1", "PSR-12"]
+			"tags": []
 		},
 		{
 			"path": ".clinerules/coding/tailwindcss-coding-guidelines.md",
+			"version": "1.0",
 			"description": "TailwindCSSを効果的に使うための、このプロジェクトのコーディング規約だよ！",
-			"tags": ["TailwindCSS", "コーディング規約", "ベストプラクティス", "CSS"]
+			"tags": []
 		},
 		{
 			"path": ".clinerules/coding/uv-python-usage-guide.md",
+			"version": "1.0",
 			"description": "A comprehensive guide to using UV for Python project management, covering installation, environment management, package handling, and best practices.",
 			"tags": ["uv", "python", "package-manager", "venv", "guide"]
 		},
 		{
 			"path": ".clinerules/comprehensive-slide-dev-guide.md",
+			"version": "1.0",
 			"description": "A comprehensive guide to crafting high-quality advanced presentations using Slidev, covering advanced syntax, visuals, interactivity, customization, and deployment.",
 			"tags": ["slidev", "guide", "advanced", "presentation", "development"]
 		},
 		{
 			"path": ".clinerules/core-behavior/MCP/sequential-thinking.md",
+			"version": "1.0",
 			"description": "A guide for effectively using the sequentialthinking MCP tool for dynamic and reflective problem-solving.",
 			"tags": ["mcp", "sequentialthinking", "problem-solving", "workflow-guide", "ai-guidance"]
 		},
 		{
 			"path": ".clinerules/core-behavior/cline-architecture.md",
+			"version": "1.0",
 			"description": "Defines Cline's extension architecture, components, data flow, and development guidelines.",
 			"tags": ["architecture", "development-guide", "extension", "vscode", "core-behavior"]
 		},
 		{
 			"path": ".clinerules/core-behavior/cline-communication-style.md",
+			"version": "1.0",
 			"description": "レコとJunのコミュニケーションスタイル、レコの役割、そしてレコがJunをサポートするための特定の機能についてまとめたガイドラインだよ。これはグローバルなルールとして適用されるよ。",
-			"tags": ["コミュニケーション", "スタイルガイド", "レコ", "Jun", "AIエージェント"]
+			"tags": []
 		},
 		{
 			"path": ".clinerules/core-behavior/cline-continuous-improvement-protocol.md",
+			"version": "1.0",
 			"description": "Defines Cline's mandatory protocol for self-reflection, persistent knowledge capture using dedicated logs, and continuous improvement of its operational knowledge before task completion.",
 			"tags": ["protocol", "meta", "learning", "reflection", "knowledge-management", "core-behavior"]
 		},
 		{
 			"path": ".clinerules/core-behavior/memory-bank.md",
+			"version": "1.0",
 			"description": "Describes Cline's Memory Bank system, its structure, and workflows for maintaining project knowledge across sessions.",
 			"tags": ["memory-bank", "knowledge-base", "core-behavior", "documentation-protocol"]
 		},
 		{
 			"path": ".clinerules/core-behavior/optional/appendix-self-improving-cline.md",
+			"version": "1.0",
 			"description": "Appendix proposing improvements to self-improving-cline.md regarding fork management context awareness.",
 			"tags": ["appendix", "suggestion", "fork-management", "self-improvement", "meta", "clinerules"]
 		},
 		{
 			"path": ".clinerules/core-behavior/optional/rule-improvement-appendix-protocol.md",
+			"version": "1.0",
 			"description": "Defines the protocol for creating appendix files to document proposed improvements to other .clinerules, especially in forked repositories, avoiding direct modification conflicts.",
 			"tags": ["meta", "clinerules", "improvement", "documentation", "protocol", "fork-management"]
 		},
 		{
 			"path": ".clinerules/core-behavior/proactive-format-checking.md",
+			"version": "1.0",
 			"description": "一貫性を保つために、新しいファイルを作成する前に既存のファイル形式を積極的に確認するためのルールだよ。",
 			"tags": ["core-behavior", "consistency", "file-format"]
 		},
 		{
 			"path": ".clinerules/core-behavior/self-improving-cline.md",
+			"version": "1.0",
 			"description": "Defines a process for Cline to reflect on interactions and suggest improvements to active .clinerules.",
 			"tags": ["meta", "self-improvement", "clinerules", "reflection", "core-behavior"]
 		},
 		{
 			"path": ".clinerules/core-behavior/writing/writing-effective-clinerules.md",
+			"version": "1.1",
 			"description": "Guidelines and best practices for creating effective .clinerules to guide Cline's behavior, knowledge, and workflows.",
 			"tags": ["meta", "guideline", "clinerules", "documentation", "best-practices"]
 		},
 		{
 			"path": ".clinerules/database/mysql-laravel12-best-practices.md",
+			"version": "1.0",
 			"description": "Laravel 12を使った開発でMySQLデータベースを効果的に利用するためのベストプラクティスをまとめたよ！パフォーマンス、保守性、セキュリティを考慮したデータベース設計と操作のヒントが満載だよ！✨",
-			"tags": ["Laravel", "Laravel12", "MySQL", "データベース", "ベストプラクティス", "Eloquent", "クエリビルダ"]
+			"tags": []
 		},
 		{
 			"path": ".clinerules/gemini-comprehensive-software-engineering-guide.md",
+			"version": "1.0",
 			"description": "A comprehensive guide to software engineering best practices, covering architecture, debugging, development processes, code quality, collaboration, security, and reliability.",
 			"tags": ["software-engineering", "gemini", "architecture", "development-guide", "code-quality", "security", "reliability"]
 		},
 		{
 			"path": ".clinerules/mcp-development-protocol.md",
+			"version": "1.0",
 			"description": "Defines the protocol and steps for developing MCP (Model Context Protocol) servers.",
 			"tags": ["mcp", "development", "protocol", "server", "integration"]
 		},
 		{
 			"path": ".clinerules/new-task-automation.md",
+			"version": "1.0",
 			"description": "Workflow for starting new task when context window reaches 50%",
 			"tags": ["context-management", "new-task"]
 		},
 		{
 			"path": ".clinerules/next-js-supabase.md",
+			"version": "1.0",
 			"description": "Guidelines for writing Next.js apps with Supabase Auth",
 			"tags": ["nextjs", "supabase", "auth", "ssr", "guide", "best-practices"]
 		},
 		{
 			"path": ".clinerules/role/role-it-trainer.md",
+			"version": "1.0",
 			"description": "Rules for Cline to act as an IT training instructor. Supports curriculum planning, implementation guidelines, and creation of slide and text materials.",
 			"tags": ["role", "it-trainer", "training", "curriculum", "slidev", "markdown"]
 		},
 		{
 			"path": ".clinerules/role/role-waterfall-documenter.md",
+			"version": "1.0",
 			"description": "Rules for Cline to act as a document creator in waterfall development projects. Supports creation of various design documents.",
 			"tags": ["role", "documenter", "waterfall", "design-document", "markdown", "metadata"]
 		},
 		{
 			"path": ".clinerules/tool/GitHub/github_actions.md",
+			"version": "1.0",
 			"description": "GitHub Actionsのワークフローにおけるツール実行パスの指定や、CI/CD環境での一貫した実行を保証するためのルールをまとめたよ！",
-			"tags": ["GitHub Actions", "CI/CD", "ベストプラクティス", "ワークフロー"]
+			"tags": []
 		},
 		{
 			"path": ".clinerules/tool/GitHub/github_flow.md",
+			"version": "1.0",
 			"description": "GitHub Actionsのワークフローにおけるツール実行パスの指定や、CI/CD環境での一貫した実行を保証するためのルールをまとめたよ！",
-			"tags": ["GitHub", "CI/CD", "ベストプラクティス", "ワークフロー", "ブランチ管理"]
+			"tags": []
 		},
 		{
 			"path": ".clinerules/tool/GitHub/workflows/pr-review-cline.md",
+			"version": "1.0",
 			"description": "A detailed workflow for Cline (the AI assistant) to review Pull Requests specifically for the Cline project, utilizing the gh CLI and internal knowledge.",
 			"tags": ["pr review", "github", "cline project", "ai workflow", "gh cli"]
 		},
 		{
 			"path": ".clinerules/tool/docker/docker-coding-guidelines.md",
+			"version": "1.0",
 			"description": "Dockerのベストプラクティスについてまとめたよ！これを参考に、もっと効率的で安全なDockerイメージを作れるようになるはずだよ！🚀",
-			"tags": ["Docker", "ベストプラクティス", "コンテナ", "Dockerfile", "CI/CD"]
+			"tags": []
 		},
 		{
 			"path": ".clinerules/workflows/act-mode-workflow.md",
+			"version": "1.1",
 			"description": "ACTモードにおけるタスク実行の標準ワークフローを定義します。タスクの読み込み、実行、ユーザーとの対話、完了報告、作業報告書の作成までの一連のプロセスを規定します。",
 			"tags": ["workflow", "act-mode", "task-management", "obsidian"]
 		},
 		{
 			"path": ".clinerules/workflows/create-clinerule.md",
+			"version": "1.0",
 			"description": "新しい.clinerulesファイルを作成し、rules-manifest.jsonに登録するまでの標準的なワークフローだよ。",
-			"tags": ["workflow", "clinerules", "development-process"]
+			"tags": []
 		},
 		{
 			"path": ".clinerules/workflows/plan-mode-workflow.md",
+			"version": "1.0",
 			"description": "PLANモードにおけるタスク計画と実行の標準ワークフローを定義します。タスクの細分化、UI計画、ユーザー承認、Obsidianへの保存までの一連のプロセスを規定します。",
 			"tags": ["workflow", "plan-mode", "task-management", "obsidian"]
 		}
