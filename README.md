@@ -119,18 +119,21 @@ curl -o /path/to/your/project/.clinerules/coding/javascript-coding-guidelines.md
     cp /path/to/your/project/.clinerules/coding/javascript-coding-guidelines.md ./.clinerules/coding/
     ```
 
-4.  **変更をコミットして、新しいブランチをリモートリポジトリにプッシュします。**
+4.  **`rules-manifest.json` を更新して、変更を反映させます。**
+    ルールファイルの説明 (`description`) やタグ (`tags`) を変更した場合、`rules-manifest.json`内の対応するエントリも手動で更新してください。
+
+5.  **変更をコミットして、新しいブランチをリモートリポジトリにプッシュします。**
     ```bash
     git add .
     git commit -m "feat(rules): JavaScriptのコーディング規約を更新"
     git push origin feature/update-js-rules
     ```
 
-5.  **GitHub上でプルリクエストを作成します。**
+6.  **GitHub上でプルリクエストを作成します。**
     *   `feature/update-js-rules` ブランチから `my-rules` ブランチへのプルリクエストを作成します。
     *   PRのタイトルや説明に、変更の概要や理由を記述します。
 
-6.  **プルリクエストをマージします。**
+7.  **プルリクエストをマージします。**
     *   内容を確認した後、GitHub上でPRをマージします。
     *   マージ後、作業ブランチは削除してOKです。
 ```
