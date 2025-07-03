@@ -68,6 +68,7 @@ globs: *
 *   **Environment Variables**: Manage environment-dependent settings (API keys, DB connection info, etc.) in the `.env` file and load them using the `env()` helper within `config/*.php`.
 *   **Default Values**: Always specify a default value for the `env()` helper (`env('KEY', 'default_value')`).
 *   **Configuration Caching**: Run `php artisan config:cache` in production environments to cache configuration files.
+*   **Related File Updates**: When changing a configuration value, also check and update related files such as `.env.example` and documentation (`README.md`, etc.) to ensure consistency.
 
 ## 8. Testing
 
