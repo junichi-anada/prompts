@@ -2,13 +2,6 @@
 	"version": "1.0.0",
 	"rules": [
 		{
-			"path": ".clinerules/act-mode-workflow.md",
-			"version": "1.0",
-			"description": "ACTモードにおけるタスク実行の標準ワークフローを定義します。タスクの読み込み、実行、ユーザーとの対話、完了報告、作業報告書の作成までの一連のプロセスを規定します。",
-			"tags": ["workflow", "act-mode", "task-management", "obsidian"],
-			"author": "Jun & Reco"
-		},
-		{
 			"path": ".clinerules/cline-for-research.md",
 			"version": "1.0",
 			"description": "Guides the user through a research process using available MCP tools, offering choices for refinement, method, and output.",
@@ -290,4 +283,3 @@
 		}
 	]
 }
-
