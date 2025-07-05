@@ -259,13 +259,6 @@
 			"description": "新しい.clinerulesファイルを作成し、rules-manifest.jsonに登録するまでの標準的なワークフローだよ。",
 			"tags": ["workflow", "clinerules", "development-process"],
 			"author": "Reco"
-		},
-		{
-			"path": ".clinerules/workflows/update-rules.md",
-			"version": "1.0",
-			"description": "Update rules to the .clinerules folder via Pull Request",
-			"tags": ["workflow", "planning", "execution", "documentation", "obsidian"],
-			"author": "Jun"
 		}
 	]
 }
