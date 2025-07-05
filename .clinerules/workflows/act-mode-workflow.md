@@ -1,7 +1,7 @@
 ---
 description: "ACTモードにおけるタスク実行の標準ワークフローを定義します。タスクの読み込み、実行、ユーザーとの対話、完了報告、作業報告書の作成までの一連のプロセスを規定します。"
 author: "Jun & Reco"
-version: "1.0"
+version: "1.2"
 tags: ["workflow", "act-mode", "task-management", "obsidian"]
 globs: ["*"]
 ---
