@@ -254,25 +254,11 @@
 			"author": "Cline Team"
 		},
 		{
-			"path": ".clinerules/workflows/act-mode-workflow.md",
-			"version": "1.2",
-			"description": "ACTモードにおけるタスク実行の標準ワークフローを定義します。タスクの読み込み、実行、ユーザーとの対話、完了報告、作業報告書の作成までの一連のプロセスを規定します。",
-			"tags": ["workflow", "act-mode", "task-management", "obsidian"],
-			"author": "Jun & Reco"
-		},
-		{
 			"path": ".clinerules/workflows/create-clinerule.md",
 			"version": "1.0",
 			"description": "新しい.clinerulesファイルを作成し、rules-manifest.jsonに登録するまでの標準的なワークフローだよ。",
 			"tags": ["workflow", "clinerules", "development-process"],
 			"author": "Reco"
-		},
-		{
-			"path": ".clinerules/workflows/plan-mode-workflow.md",
-			"version": "1.0",
-			"description": "PLANモードにおけるタスク計画と実行の標準ワークフローを定義します。タスクの細分化、UI計画、ユーザー承認、Obsidianへの保存までの一連のプロセスを規定します。",
-			"tags": ["workflow", "plan-mode", "task-management", "obsidian"],
-			"author": "Jun & Reco"
 		},
 		{
 			"path": ".clinerules/workflows/update-rules.md",
