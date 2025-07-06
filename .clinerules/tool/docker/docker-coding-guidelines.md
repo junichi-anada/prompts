@@ -1,156 +1,157 @@
 ---
-title: "Docker コーディング規約 ベストプラクティス"
-description: "Dockerのベストプラクティスについてまとめたよ！これを参考に、もっと効率的で安全なDockerイメージを作れるようになるはずだよ！🚀"
+title: "Docker Coding Guidelines Best Practices"
+description: "Best practices for Docker summarized! Use this reference to create more efficient and secure Docker images! 🚀"
 author: "Reco"
+version: "1.0"
 date: "2025-06-03"
-tag: #Docker, #ベストプラクティス, #コンテナ, #Dockerfile, #CI/CD
-globs: *
+tags: ["Docker", "best-practices", "ベストプラクティス", "container", "コンテナ", "Dockerfile", "CI/CD"]
+globs: ["*"]
 ---
 
-# Docker コーディング規約のベストプラクティス ✨
+# Docker Coding Guidelines Best Practices ✨
 
-Jun、Dockerのベストプラクティスについてまとめたよ！これを参考に、もっと効率的で安全なDockerイメージを作れるようになるはずだよ！🚀
+Jun, I've summarized Docker best practices! Use this reference to create more efficient and secure Docker images! 🚀
 
-## 1. マルチステージビルドを活用しよう！🏗️
-最終的なイメージサイズを小さくするために、ビルドプロセスを複数のステージに分けよう。こうすることで、最終イメージにはアプリケーションの実行に必要なファイルだけが含まれるようになるよ。ビルドステップを並行して実行できるから、効率もアップするんだ！
+## 1. Utilize Multi-Stage Builds! 🏗️
+Split your build process into multiple stages to reduce the final image size. This way, the final image will only contain files necessary for running the application. Build steps can run in parallel, improving efficiency!
 
-### 再利用可能なステージを作ろう！♻️
-もし共通のコンポーネントを持つ複数のイメージがあるなら、それらをまとめた再利用可能なステージを作って、それをベースにするといいよ。Dockerは共通ステージを一度だけビルドすればいいから、メモリ効率も良くなるし、読み込みも速くなるんだ。
+### Create Reusable Stages! ♻️
+If you have multiple images with common components, create reusable stages that combine them as a base. Docker only needs to build common stages once, improving memory efficiency and faster loading.
 
-## 2. 適切なベースイメージを選ぼう！💡
-安全なイメージを作るための最初のステップは、適切なベースイメージを選ぶことだよ。信頼できるソースからビルドされていて、できるだけ小さいイメージを選ぶのがポイント！
+## 2. Choose the Right Base Image! 💡
+The first step to creating secure images is choosing the right base image. The key is selecting images built from trusted sources and keeping them as small as possible!
 
-*   **Docker公式イメージ**: ドキュメントがしっかりしていて、ベストプラクティスを推奨していて、定期的に更新されているから、多くのアプリケーションの信頼できる出発点になるよ。
-*   **Verified Publisherイメージ**: Dockerと提携している組織が公開・管理している高品質なイメージだよ。Dockerがコンテンツの信頼性を検証してくれているんだ。
-*   **Docker-Sponsored Open Sourceイメージ**: Dockerがオープンソースプログラムを通じて支援しているプロジェクトが公開・管理しているイメージだよ。
+*   **Docker Official Images**: Well-documented, promote best practices, and regularly updated, making them reliable starting points for many applications.
+*   **Verified Publisher Images**: High-quality images published and maintained by organizations partnered with Docker. Docker verifies the content's reliability.
+*   **Docker-Sponsored Open Source Images**: Images published and maintained by projects supported by Docker through their open source program.
 
-これらのプログラムのバッジが付いているイメージを選ぶと安心だね！
+Choosing images with these program badges gives you peace of mind!
 
-自分でDockerfileからイメージをビルドするときは、要件に合った最小限のベースイメージを選ぼう。小さいイメージは、ポータビリティが高くてダウンロードも速いだけでなく、イメージサイズを縮小して、依存関係による脆弱性の数を最小限に抑えてくれるんだ。
+When building images from Dockerfiles yourself, choose minimal base images that meet your requirements. Smaller images are not only more portable and faster to download, but they also reduce image size and minimize the number of vulnerabilities from dependencies.
 
-ビルドと単体テスト用、そして本番用（通常はもっとスリムなイメージ）の2種類のベースイメージを使うことも検討してみてね。開発の後期段階では、コンパイラやビルドシステム、デバッグツールなどのビルドツールは必要ないことが多いから、最小限の依存関係を持つ小さなイメージは、攻撃対象領域を大幅に減らしてくれるよ。
+Consider using two types of base images: one for builds and unit tests, and another for production (usually slimmer images). In later development stages, build tools like compilers, build systems, and debug tools are often unnecessary, so smaller images with minimal dependencies significantly reduce the attack surface.
 
-## 3. イメージは頻繁にリビルドしよう！🔄
-Dockerイメージは不変だよ。イメージをビルドするということは、その時点でのスナップショットを取るということなんだ。これには、ベースイメージ、ライブラリ、その他のソフトウェアも含まれるよ。イメージを最新の状態に保ち、安全にするために、依存関係を更新して頻繁にイメージをリビルドするようにしよう。
+## 3. Rebuild Images Frequently! 🔄
+Docker images are immutable. Building an image means taking a snapshot at that point in time. This includes base images, libraries, and other software. To keep images up-to-date and secure, update dependencies and rebuild images frequently.
 
-ビルド時に依存関係の最新バージョンを確実に取得するには、`--no-cache`オプションを使ってキャッシュヒットを避けることができるよ。
+To ensure you get the latest versions of dependencies during builds, you can use the `--no-cache` option to avoid cache hits.
 
 ```console
 $ docker build --no-cache -t my-image:my-tag .
 ```
 
-ベースイメージのバージョンを固定することも検討してみてね。
+Consider pinning your base image versions as well.
 
-## 4. `.dockerignore`で除外しよう！🗑️
-ビルドに関係のないファイルをソースリポジトリを再構築せずに除外するには、`.dockerignore`ファイルを使おう。このファイルは、`.gitignore`ファイルと似た除外パターンをサポートしているよ。
+## 4. Exclude with `.dockerignore`! 🗑️
+To exclude files unrelated to builds without rebuilding the source repository, use a `.dockerignore` file. This file supports exclusion patterns similar to `.gitignore` files.
 
-例えば、`.md`拡張子を持つすべてのファイルを除外するには、次のように書くよ。
+For example, to exclude all files with `.md` extensions, write:
 
 ```plaintext
 *.md
 ```
 
-## 5. エフェメラルコンテナを作ろう！👻
-Dockerfileで定義するイメージは、できるだけエフェメラル（一時的）なコンテナを生成するようにしよう。エフェメラルとは、コンテナを停止して破棄しても、最小限のセットアップと設定で再構築・置き換えができるということだよ。
+## 5. Create Ephemeral Containers! 👻
+Images defined in Dockerfiles should generate ephemeral (temporary) containers as much as possible. Ephemeral means that even if you stop and destroy containers, they can be rebuilt and replaced with minimal setup and configuration.
 
-ステートレスな方法でコンテナを実行する動機については、The Twelve-factor Appの「プロセス」を参照してみてね。
+For motivation on running containers in a stateless manner, refer to "Processes" in The Twelve-Factor App.
 
-## 6. 不要なパッケージはインストールしない！🚫
-「あったら便利かも」という理由だけで、余分なパッケージや不要なパッケージをインストールするのは避けよう。例えば、データベースイメージにテキストエディタを含める必要はないよね。
+## 6. Don't Install Unnecessary Packages! 🚫
+Avoid installing extra or unnecessary packages just because they "might be useful." For example, there's no need to include a text editor in a database image.
 
-余分なパッケージや不要なパッケージをインストールしないことで、イメージの複雑さが減り、依存関係が減り、ファイルサイズが減り、ビルド時間が短縮されるんだ。
+By not installing extra or unnecessary packages, you reduce image complexity, dependencies, file size, and build time.
 
-## 7. アプリケーションを分離しよう！🔗
-各コンテナは1つの役割だけを持つべきだよ。アプリケーションを複数のコンテナに分離することで、水平スケーリングが容易になり、コンテナの再利用もしやすくなるんだ。例えば、Webアプリケーションスタックは、Webアプリケーション、データベース、インメモリキャッシュをそれぞれ管理するために、独自のイメージを持つ3つの独立したコンテナで構成できるよ。
+## 7. Decouple Applications! 🔗
+Each container should have only one concern. Decoupling applications into multiple containers makes horizontal scaling easier and container reuse more convenient. For example, a web application stack can consist of three separate containers with their own images to manage the web application, database, and in-memory cache respectively.
 
-各コンテナを1つのプロセスに限定するのは良い目安だけど、厳密なルールではないよ。例えば、コンテナはinitプロセスで起動できるだけでなく、一部のプログラムは独自のプロセスを起動することもあるんだ。
+Limiting each container to one process is a good rule of thumb, but not a hard rule. For example, containers can spawn with init processes, and some programs may spawn their own processes.
 
-コンテナをできるだけクリーンでモジュール化された状態に保つために、最善の判断をしよう。コンテナが互いに依存している場合は、Dockerコンテナネットワークを使って、これらのコンテナが通信できるようにするといいよ。
+Use your best judgment to keep containers as clean and modular as possible. If containers depend on each other, use Docker container networks to enable communication between these containers.
 
-## 8. 複数行の引数はソートしよう！🔠
-可能であれば、複数行の引数はアルファベット順にソートして、メンテナンスを容易にしよう。これにより、パッケージの重複を避け、リストの更新がはるかに簡単になるよ。また、PRも読みやすく、レビューしやすくなるんだ。バックスラッシュ（`\`）の前にスペースを追加するのも効果的だよ。
+## 8. Sort Multi-line Arguments! 🔠
+Whenever possible, sort multi-line arguments alphabetically to make maintenance easier. This helps avoid package duplication and makes updating lists much simpler. It also makes PRs easier to read and review. Adding a space before backslashes (`\`) is also effective.
 
-## 9. ビルドキャッシュを活用しよう！⚡
-イメージをビルドするとき、DockerはDockerfileの指示を順番に実行していくよ。各指示について、Dockerはビルドキャッシュからその指示を再利用できるかどうかを確認するんだ。
+## 9. Leverage Build Cache! ⚡
+When building images, Docker steps through Dockerfile instructions in order. For each instruction, Docker checks whether it can reuse that instruction from the build cache.
 
-ビルドキャッシュの仕組みとキャッシュの無効化がどのように行われるかを理解することは、ビルドを高速化するために非常に重要だよ。
+Understanding how the build cache works and how cache invalidation occurs is crucial for speeding up builds.
 
-## 10. ベースイメージのバージョンを固定しよう！🔒
-イメージタグは変更可能で、パブリッシャーはタグを更新して新しいイメージを指すことができるんだ。これは、パブリッシャーが新しいバージョンのイメージを指すようにタグを更新できるため便利だよ。そして、イメージの利用者としては、イメージをリビルドするたびに自動的に新しいバージョンを取得できるということだね。
+## 10. Pin Base Image Versions! 🔒
+Image tags are mutable, and publishers can update tags to point to new images. This is convenient as publishers can update tags to point to new versions of images, and as image consumers, you automatically get new versions every time you rebuild images.
 
-例えば、Dockerfileで`FROM alpine:3.21`と指定すると、`3.21`は`3.21`の最新のパッチバージョンに解決されるよ。
+For example, when you specify `FROM alpine:3.21` in a Dockerfile, `3.21` resolves to the latest patch version of `3.21`.
 
 ```dockerfile
 # syntax=docker/dockerfile:1
 FROM alpine:3.21
 ```
 
-しかし、これには欠点もあるんだ。ビルドごとに同じものが得られる保証がないんだ。これにより、破壊的な変更が発生する可能性があり、使用している正確なイメージバージョンの監査証跡も残らないことになるね。
+However, this has drawbacks. There's no guarantee you'll get the same thing on every build. This can introduce breaking changes and leaves no audit trail of the exact image versions you're using.
 
-サプライチェーンの整合性を完全に確保するには、イメージバージョンを特定のダイジェストに固定できるよ。イメージをダイジェストに固定することで、パブリッシャーがタグを新しいイメージに置き換えても、常に同じイメージバージョンを使用することが保証されるんだ。
+For complete supply chain integrity, you can pin image versions to specific digests. Pinning images to digests ensures you always use the same image version, even if publishers replace tags with new images.
 
 ```dockerfile
 # syntax=docker/dockerfile:1
 FROM alpine:3.21@sha256:a8560b36e8b8210634f77d9f7f9efd7ffa463e380b75e2e74aff4511df3ef88c
 ```
 
-これにより予期せぬ変更を回避できるけど、手動でイメージダイジェストを調べて含めるのは手間がかかるし、自動化されたセキュリティ修正を受けられなくなる可能性もあるよ。
+This avoids unexpected changes, but manually looking up and including image digests is tedious and may prevent you from receiving automated security fixes.
 
-Docker Scoutのデフォルトの「Up-to-Date Base Images」ポリシーは、使用しているベースイメージのバージョンが実際に最新バージョンであるかどうかをチェックしてくれるんだ。このポリシーは、Dockerfile内の固定されたダイジェストが正しいバージョンに対応しているかどうかもチェックするよ。パブリッシャーが固定したイメージを更新した場合、ポリシー評価は非準拠ステータスを返し、イメージを更新する必要があることを示してくれるんだ。
+Docker Scout's default "Up-to-Date Base Images" policy checks whether the base image versions you're using are actually the latest versions. This policy also checks whether pinned digests in Dockerfiles correspond to the correct versions. If publishers update pinned images, policy evaluation returns a non-compliant status, indicating you need to update your images.
 
-Docker Scoutは、Docker Scoutでベースイメージを自動的に更新するための自動修復ワークフローもサポートしているよ。新しいイメージダイジェストが利用可能になった場合、Docker Scoutはリポジトリにプルリクエストを自動的に作成して、Dockerfileを最新バージョンに更新できるんだ。これは、バージョンを自動的に変更するタグを使用するよりも優れているよ。なぜなら、変更がいつどのように行われたかの監査証跡があり、Junがコントロールできるからね。
+Docker Scout also supports auto-remediation workflows for automatically updating base images with Docker Scout. When new image digests become available, Docker Scout can automatically create pull requests in your repository to update Dockerfiles to the latest versions. This is better than using tags that automatically change versions because there's an audit trail of when and how changes were made, and Jun has control.
 
-## 11. CIでイメージをビルドしてテストしよう！✅
-ソース管理に変更をコミットしたり、プルリクエストを作成したりするときは、GitHub Actionsやその他のCI/CDパイプラインを使って、Dockerイメージを自動的にビルドしてタグ付けし、テストするようにしよう。
+## 11. Build and Test Images in CI! ✅
+When committing changes to source control or creating pull requests, use GitHub Actions or other CI/CD pipelines to automatically build, tag, and test Docker images.
 
-## 12. Dockerfileの命令について 📝
+## 12. About Dockerfile Instructions 📝
 
 ### FROM
-可能であれば、現在の公式イメージをベースにしよう。DockerはAlpineイメージを推奨しているよ。これは厳密に管理されていてサイズも小さい（現在6MB未満）のに、完全なLinuxディストリビューションだからね。
+Whenever possible, use current official images as your base. Docker recommends Alpine images since they're strictly controlled and small in size (currently under 6MB) while being a complete Linux distribution.
 
 ### LABEL
-プロジェクトごとにイメージを整理したり、ライセンス情報を記録したり、自動化を支援したりするために、イメージにラベルを追加できるよ。各ラベルには、1つ以上のキーと値のペアを持つ`LABEL`で始まる行を追加しよう。
+You can add labels to images to organize images by project, record licensing information, or aid automation. Add a line beginning with `LABEL` for each label, containing one or more key-value pairs.
 
 ### RUN
-長くて複雑な`RUN`ステートメントは、バックスラッシュで区切って複数行に分割すると、Dockerfileが読みやすく、理解しやすく、メンテナンスしやすくなるよ。
+Long or complex `RUN` statements should be split across multiple lines separated with backslashes to make your Dockerfile more readable, understandable, and maintainable.
 
-`apt-get`を使う場合は、常に`RUN apt-get update`と`apt-get install`を同じ`RUN`ステートメントに結合しよう。これにより、キャッシュの問題を防ぎ、常に最新のパッケージバージョンがインストールされるようになるよ。
+When using `apt-get`, always combine `RUN apt-get update` with `apt-get install` in the same `RUN` statement. This prevents caching issues and ensures the latest package versions are always installed.
 
-パイプを使う場合は、`set -o pipefail &&`を先頭に追加して、パイプ内のどの段階でエラーが発生してもコマンドが失敗するようにしよう。
+When using pipes, add `set -o pipefail &&` at the beginning to ensure commands fail if any stage in the pipe encounters an error.
 
 ### CMD
-`CMD`命令は、イメージに含まれるソフトウェアを引数とともに実行するために使うべきだよ。ほとんどの場合、`CMD ["executable", "param1", "param2"]`の形式で使うべきだね。
+The `CMD` instruction should be used to run the software contained by your image, along with any arguments. In most cases, you should use the form `CMD ["executable", "param1", "param2"]`.
 
 ### EXPOSE
-`EXPOSE`命令は、コンテナが接続をリッスンするポートを示すよ。アプリケーションの一般的なポートを使うべきだね。
+The `EXPOSE` instruction indicates the ports on which a container listens for connections. You should use the common port for your application.
 
 ### ENV
-新しいソフトウェアを簡単に実行できるように、`ENV`を使ってコンテナがインストールするソフトウェアの`PATH`環境変数を更新できるよ。また、サービス固有の環境変数を提供したり、バージョン番号を管理したりするのにも便利だよ。
+To make new software easier to run, you can use `ENV` to update the `PATH` environment variable for the software your container installs. It's also useful for providing service-specific environment variables or managing version numbers.
 
-環境変数を完全に解除するには、`RUN`コマンドで`export`、`echo`、`unset`を1つのレイヤーで実行するようにしよう。
+To completely unset environment variables, use a `RUN` command with `export`, `echo`, and `unset` in a single layer.
 
-### ADD または COPY
-`ADD`と`COPY`は機能的に似ているけど、ほとんどの場合は`COPY`を使うのがおすすめだよ。`COPY`はビルドコンテキストからコンテナにファイルをコピーするのに適しているね。
+### ADD or COPY
+Although `ADD` and `COPY` are functionally similar, generally speaking, `COPY` is preferred. `COPY` is appropriate for copying files from build context to containers.
 
-`ADD`は、ビルドの一部としてリモートのアーティファクトをダウンロードする必要がある場合に最適だよ。`wget`や`tar`のような手動でファイルを追加するよりも、より正確なビルドキャッシュを保証してくれるんだ。
+`ADD` is best for when you need to download remote artifacts as part of builds. It provides more precise build cache guarantees than manually adding files with `wget` or `tar`.
 
 ### ENTRYPOINT
-`ENTRYPOINT`の最適な使い方は、イメージのメインコマンドを設定することだよ。これにより、イメージがそのコマンドであるかのように実行できるようになり、`CMD`はデフォルトのフラグとして使用できるんだ。
+The best use for `ENTRYPOINT` is to set the image's main command, allowing that image to be run as though it was that command, using `CMD` as default flags.
 
 ### VOLUME
-`VOLUME`命令は、データベースのストレージ領域、設定ストレージ、またはDockerコンテナによって作成されるファイルやフォルダを公開するために使うべきだよ。変更可能またはユーザーがサービス可能なイメージのあらゆる部分に`VOLUME`を使うことを強く推奨するよ。
+The `VOLUME` instruction should be used to expose database storage areas, configuration storage, or files/folders created by your Docker container. You're strongly encouraged to use `VOLUME` for any mutable and/or user-serviceable parts of your image.
 
 ### USER
-サービスが特権なしで実行できる場合は、`USER`を使って非ルートユーザーに変更しよう。Dockerfileでユーザーとグループを作成することから始めるんだ。
+If a service can run without privileges, use `USER` to change to a non-root user. Start by creating the user and group in the Dockerfile.
 
-`sudo`のインストールや使用は避けよう。予測できないTTYやシグナル転送の動作があり、問題を引き起こす可能性があるからね。
+Avoid installing or using `sudo` as it has unpredictable TTY and signal-forwarding behavior that can cause problems.
 
 ### WORKDIR
-明確さと信頼性のために、`WORKDIR`には常に絶対パスを使うべきだよ。また、`RUN cd … && do-something`のような、読みにくく、トラブルシューティングやメンテナンスが難しい命令を増やす代わりに、`WORKDIR`を使うべきだね。
+For clarity and reliability, you should always use absolute paths for your `WORKDIR`. Instead of proliferating instructions like `RUN cd … && do-something`, which are hard to read, troubleshoot, and maintain, use `WORKDIR`.
 
 ### ONBUILD
-`ONBUILD`コマンドは、現在のDockerfileのビルドが完了した後に実行されるよ。`ONBUILD`は、現在のイメージから派生した子イメージで実行されるんだ。`ONBUILD`コマンドは、親Dockerfileが子Dockerfileに与える指示だと考えてみてね。
+An `ONBUILD` command executes after the current Dockerfile build completes. `ONBUILD` executes in any child image derived from the current image. Think of the `ONBUILD` command as an instruction the parent Dockerfile gives to the child Dockerfile.
 
-`ONBUILD`でビルドされたイメージには、別のタグを付けるべきだよ。例えば、`ruby:1.9-onbuild`や`ruby:2.0-onbuild`のようにね。
+Images built with `ONBUILD` should get a separate tag, for example: `ruby:1.9-onbuild` or `ruby:2.0-onbuild`.
 
-これで、Dockerのベストプラクティスはバッチリだね！何か質問はある？😊
+That covers Docker best practices perfectly! Do you have any questions? 😊

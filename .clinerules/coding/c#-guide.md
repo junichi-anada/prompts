@@ -1,9 +1,9 @@
 ---
 description: A comprehensive guide to mastering C# for developers with Python and TypeScript backgrounds.
 author: Your Name/Handle # Placeholder for author
-version: 1.0 # Placeholder for version
+version: "1.0"
 globs: ["**/*.cs"] # Relevant for C# files
-tags: ["csharp", ".net", "guide", "programming-language", "typescript-transition", "python-transition"]
+tags: ["csharp", ".net", "guide", "ガイド", "programming-language", "プログラミング言語", "typescript-transition", "python-transition"]
 ---
 A Comprehensive Guide to Mastering C# for Python and TypeScript Developers
 This guide is designed for proficient software engineers with a background in Python and TypeScript who are looking to achieve an expert level of understanding and capability in C#. It delves into the core paradigms of C#, its rich feature set, and the intricacies of the.NET ecosystem, highlighting common "gotchas" and providing strategies for a smooth transition.

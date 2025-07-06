@@ -2,7 +2,7 @@
 description: Defines the protocol for creating appendix files to document proposed improvements to other .clinerules, especially in forked repositories, avoiding direct modification conflicts.
 author: Jun-san
 version: 1.0
-tags: ["meta", "clinerules", "improvement", "documentation", "protocol", "fork-management"]
+tags: ["meta", "メタ", "clinerules", "クラインルール", "improvement", "改善", "documentation", "ドキュメント", "protocol", "プロトコル", "fork-management", "フォーク管理"]
 globs: ["*"] # Applies generally when rule improvement is considered
 ---
 

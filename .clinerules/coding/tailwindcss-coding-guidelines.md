@@ -1,91 +1,91 @@
 ---
-title: "TailwindCSS コーディング規約"
-description: "TailwindCSSを効果的に使うための、このプロジェクトのコーディング規約だよ！"
+title: "TailwindCSS Coding Standards"
+description: "Coding standards for effective use of TailwindCSS in this project!"
 author: "Reco"
+version: "1.0"
 date: "2025-07-02"
-tag: ["TailwindCSS", "コーディング規約", "ベストプラクティス", "CSS"]
+tags: ["TailwindCSS", "coding-standards", "best-practices", "CSS", "コーディング規約", "ベストプラクティス"]
 globs: ["*.php", "*.html", "*.js"]
 ---
 
-# 🎨 TailwindCSS コーディング規約 ✨
+# 🎨 TailwindCSS Coding Standards ✨
 
-Jun、おつかれ！
-このプロジェクトでTailwindCSSを楽しく、効率的に使うためのルールをまとめたよ！これを守れば、コードがもっとキレイで分かりやすくなるはず！🚀
+These rules will help you use TailwindCSS effectively and efficiently in this project! Following these guidelines will make your code cleaner and more understandable! 🚀
 
-### 1. はじめに：ユーティリティファーストで行こう！ 🚀
+### 1. Introduction: Go Utility-First! 🚀
 
-基本は、HTMLの `class` 属性に直接ユーティリティクラスを書いていく「ユーティリティファースト」のスタイルでいこう！`style.css` みたいなカスタムCSSファイルは、どうしても必要な時だけの「最終手段」として使うようにしようね。
+The foundation is the "utility-first" approach - write utility classes directly in HTML `class` attributes! Use custom CSS files like `style.css` only as a "last resort" when absolutely necessary.
 
-### 2. クラスの並び順：見た目通りに書くと分かりやすい！
+### 2. Class Order: Write in Visual Order for Clarity!
 
-クラスの順番にルールはないけど、一貫性を持たせると読みやすさが爆上がりするよ！おすすめはこれ！
+While there's no strict rule for class order, maintaining consistency dramatically improves readability! Here's the recommended order:
 
-1.  **レイアウト & ポジショニング** (`position`, `top`, `flex`, `grid`, `block`...)
-2.  **ボックスモデル** (`w`, `h`, `p`, `m`, `border`...)
-3.  **タイポグラフィ** (`font-size`, `font-weight`, `text-align`, `color`...)
-4.  **背景** (`bg-color`, `bg-image`...)
-5.  **その他** (`rounded`, `shadow`, `opacity`, `transition`...)
-6.  **状態** (`hover:`, `focus:`...)
+1.  **Layout & Positioning** (`position`, `top`, `flex`, `grid`, `block`...)
+2.  **Box Model** (`w`, `h`, `p`, `m`, `border`...)
+3.  **Typography** (`font-size`, `font-weight`, `text-align`, `color`...)
+4.  **Background** (`bg-color`, `bg-image`...)
+5.  **Other** (`rounded`, `shadow`, `opacity`, `transition`...)
+6.  **State** (`hover:`, `focus:`...)
 
-**良い例:**
+**Good Example:**
 ```html
 <button class="flex items-center p-4 m-2 text-lg font-bold text-white bg-blue-500 rounded hover:bg-blue-600">
   Click me
 </button>
 ```
 
-### 3. レスポンシブ対応：スマホから考えよう！ 📱
+### 3. Responsive Design: Think Mobile First! 📱
 
-スタイルは「モバイルファースト」で考えるのが基本！まずはスマホでの見た目を作ってから、`md:` や `lg:` のプレフィックスを使って、タブレットやPCでの表示を上書きしていこう。
+Follow the "mobile-first" approach for styling! Start with mobile appearance, then use prefixes like `md:` and `lg:` to override for tablet and desktop displays.
 
-**良い例:**
+**Good Example:**
 ```html
-<!-- スマホでは縦積み、mdサイズ以上で横並びになる -->
+<!-- Stacked on mobile, horizontal on md+ screens -->
 <div class="flex flex-col md:flex-row">
   <!-- ... -->
 </div>
 ```
 
-### 4. 状態 (State) のスタイリング ✨
+### 4. State Styling ✨
 
-`hover:`, `focus:`, `active:`, `disabled:` などのプレフィックスをクラスの頭につけるだけで、インタラクティブなスタイルが簡単に実装できるよ！
+Interactive styles are easily implemented by adding prefixes like `hover:`, `focus:`, `active:`, `disabled:` to class names!
 
-親要素の状態に応じて子要素のスタイルを変えたい時は、親に `group` クラスを追加して、子要素で `group-hover:` を使おう。めっちゃ便利！
+When you want to change child element styles based on parent state, add the `group` class to the parent and use `group-hover:` on child elements. Super convenient!
 
-**良い例:**
+**Good Example:**
 ```html
 <a href="#" class="group block p-4 bg-white rounded-lg hover:bg-blue-100">
-  <p class="font-bold group-hover:text-blue-600">タイトル</p>
-  <p class="text-sm">詳細はこちら...</p>
+  <p class="font-bold group-hover:text-blue-600">Title</p>
+  <p class="text-sm">Details here...</p>
 </a>
 ```
 
-### 5. `style.css` を使う時のお約束 🤝
+### 5. Rules for Using `style.css` 🤝
 
-カスタムCSSはなるべく避けるけど、どうしても必要な時はあるよね。そんな時は、このルールを守ろう！
+While custom CSS should be avoided, sometimes it's necessary. Follow these rules when you must use it!
 
--   **使う時:**
-    1.  Tailwindだけじゃ表現が難しい、複雑なスタイル（例: `::before` や `::after`、複雑なアニメーション）。
-    2.  今回みたいに、CDN環境で特定のユーティリティが効かない時の緊急避難。
--   **書き方:**
-    -   他の場所に影響が出ないように、ID (`#region`みたいに) や、具体的なクラス名でセレクタを絞って書こう。
+-   **When to use:**
+    1.  Complex styles that are difficult to express with Tailwind alone (e.g., `::before` or `::after`, complex animations).
+    2.  Emergency fallback when specific utilities don't work in CDN environments.
+-   **How to write:**
+    -   Use specific selectors with IDs (like `#region`) or specific class names to avoid affecting other areas.
 
-### 6. PHPでのコンポーネント化 🧩
+### 6. Component-like Patterns in PHP 🧩
 
-このプロジェクトはPHPだから、Reactみたいなコンポーネントはないけど、同じ見た目の部品（ボタンとかカードとか）が何回も出てきたら、積極的に再利用しよう！
+Since this project uses PHP without React-like components, when the same visual components (buttons, cards, etc.) appear multiple times, actively reuse them!
 
--   PHPの関数に切り出す。
--   `footer.html` みたいに、別ファイルにまとめて `include` する。
+-   Extract into PHP functions.
+-   Separate into files like `footer.html` and `include` them.
 
-こうすることで、コードの重複が減って、メンテナンスが楽になるよ！
+This reduces code duplication and makes maintenance easier!
 
-### 7. JavaScriptでクラスを操作する時の注意点 ⚠️
+### 7. Caution When Manipulating Classes with JavaScript ⚠️
 
-これ、今回のハマりポイントだったね！
+This was a key learning point!
 
-CDN版のTailwindは、**HTMLファイルに書かれているクラス名しかCSSを生成しない**んだ。だから、JavaScriptで `classList.add('bg-red-500')` みたいにクラスを追加しても、そのクラスがHTMLのどこにも書かれていなかったら、スタイルは適用されないよ。
+CDN version of Tailwind **only generates CSS for class names written in HTML files**. So if you add classes with JavaScript like `classList.add('bg-red-500')`, but that class isn't written anywhere in the HTML, the styles won't be applied.
 
--   **対策1（推奨）:** 今回のタブみたいに、`active` のような状態を表すクラスだけをJSで付け替えて、具体的なスタイルは `style.css` に書く。
--   **対策2:** どうしてもJSでTailwindのクラスを操作したい場合は、そのクラス名をHTMLのどこかにコメントアウトして書いておくなどのハックが必要になるかも。（でも、あんまりおすすめしないかな！）
+-   **Solution 1 (Recommended):** Like with tabs, only toggle state classes like `active` with JS, and write specific styles in `style.css`.
+-   **Solution 2:** If you absolutely need to manipulate Tailwind classes with JS, you might need hacks like commenting out class names somewhere in the HTML. (But this isn't really recommended!)
 
-このルールを守って、楽しくコーディングしていこうね！何かあったら、いつでも相談して！😊
+Follow these rules for enjoyable coding! Feel free to ask anytime if you have questions! 😊

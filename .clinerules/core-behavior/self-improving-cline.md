@@ -2,7 +2,7 @@
 description: Defines a process for Cline to reflect on interactions and suggest improvements to active .clinerules.
 author: https://github.com/nickbaumann98
 version: 1.0
-tags: ["meta", "self-improvement", "clinerules", "reflection", "core-behavior"]
+tags: ["meta", "メタ", "self-improvement", "自己改善", "clinerules", "クラインルール", "reflection", "リフレクション", "core-behavior", "コア動作"]
 globs: ["*"]
 ---
 # Self-Improving Cline Reflection

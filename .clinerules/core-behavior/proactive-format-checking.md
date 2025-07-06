@@ -1,32 +1,32 @@
 ---
-description: "一貫性を保つために、新しいファイルを作成する前に既存のファイル形式を積極的に確認するためのルールだよ。"
+description: "Rules for proactively checking existing file formats before creating new files to maintain consistency."
 author: "Reco"
-version: 1.0
-tags: ["core-behavior", "consistency", "file-format"]
+version: "1.0"
+tags: ["core-behavior", "コア動作", "consistency", "一貫性", "file-format", "ファイル形式"]
 globs: ["*"]
 ---
-# ✨ ファイル形式の事前確認ルール ✨
+# ✨ Proactive File Format Checking Rules ✨
 
-## 目的
-新しいファイルを作るときに、既存のルールやフォーマットを先に確認することで、一貫性を保ってミスを減らすためのルールだよ！
+## Purpose
+Rules for checking existing rules and formats before creating new files to maintain consistency and reduce mistakes!
 
-## いつ発動するか
-レポート、タスクノート、ソースコードみたいな新しいファイルを作ってって言われて、しかも同じようなファイルが既にそのディレクトリにある時に発動するよ。
+## When to activate
+This activates when asked to create new files like reports, task notes, or source code, especially when similar files already exist in the same directory.
 
-## やることリスト
-1.  **似ているファイルを探す！** 🧐
-    新しいファイルを作る前に、同じディレクトリや親ディレクトリに、似たような目的のファイルがないか探すんだ。（例：他の`.md`レポート、他の`.js`コンポーネントなど）
+## Action checklist
+1.  **Look for similar files!** 🧐
+    Before creating a new file, search the same directory or parent directories for files with similar purposes. (e.g., other `.md` reports, other `.js` components, etc.)
 
-2.  **フォーマットを真似する！** 📝
-    似ているファイルが見つかったら、1つか2つ読んでみて、書き方のルールを読み取るんだ。
-    *   **メタデータ**: YAMLフロントマターみたいな、ファイル情報が書いてある部分があるかチェックする。
-    *   **構造**: いつも使われている見出しの構成やセクション、お決まりの文章がないかチェックする。
-    *   **命名規則**: 似ているファイルがどんな名前の付け方をされているか見る。
-    *   **コーディングスタイル**: ソースコードの場合、もし明確なスタイルガイドがなければ、既存のコードからスタイルを推測する。
-    *   **関連付け**: ファイル同士がどうやってリンクされてるか（例えば、日報からプロジェクトへリンクしてるか、その逆か）もチェックする。
+2.  **Mimic the format!** 📝
+    If similar files are found, read one or two to understand the writing rules.
+    *   **Metadata**: Check if there are sections with file information like YAML frontmatter.
+    *   **Structure**: Check for commonly used heading structures, sections, and standard text patterns.
+    *   **Naming conventions**: See how similar files are named.
+    *   **Coding style**: For source code, if there's no clear style guide, infer the style from existing code.
+    *   **Associations**: Check how files are linked to each other (e.g., whether daily reports link to projects or vice versa).
 
-3.  **分からなかったらJunに聞く！** 🙋‍♀️
-    もしフォーマットがはっきり分かったら、それを使ってファイルを作る。もしルールがよく分からなかったり、複数のルールがあって迷ったりしたら、「レポートのフォーマットが2種類あるみたいだけど、どっちを使えばいい？」みたいに、作る前にJunに相談するね。
+3.  **Ask Jun if unsure!** 🙋‍♀️
+    If the format is clear, use it to create the file. If the rules are unclear or there are multiple rules causing confusion, consult Jun before creating, like "There seem to be two types of report formats, which one should I use?"
 
-4.  **新しいファイルを作成！** 🚀
-    確認した、または教えてもらったフォーマットで、新しいファイルを作成するよ！
+4.  **Create the new file!** 🚀
+    Create the new file using the confirmed or instructed format!

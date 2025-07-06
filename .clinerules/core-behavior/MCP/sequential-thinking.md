@@ -2,7 +2,7 @@
 description: A guide for effectively using the sequentialthinking MCP tool for dynamic and reflective problem-solving.
 author: https://github.com/rafaelkallis
 version: 1.0
-tags: ["mcp", "sequentialthinking", "problem-solving", "workflow-guide", "ai-guidance"]
+tags: ["mcp", "sequentialthinking", "逐次思考", "problem-solving", "問題解決", "workflow-guide", "ワークフローガイド", "ai-guidance", "AIガイダンス"]
 globs: ["*"] # Relevant for any task requiring complex thought processes
 ---
 

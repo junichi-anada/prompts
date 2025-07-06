@@ -2,7 +2,7 @@
 description: Describes Cline's Memory Bank system, its structure, and workflows for maintaining project knowledge across sessions.
 author: https://github.com/nickbaumann98
 version: 1.0
-tags: ["memory-bank", "knowledge-base", "core-behavior", "documentation-protocol"]
+tags: ["memory-bank", "メモリバンク", "knowledge-base", "知識ベース", "core-behavior", "コア動作", "documentation-protocol", "ドキュメントプロトコル"]
 globs: ["memory-bank/**/*.md", "*"]
 ---
 # Cline's Memory Bank

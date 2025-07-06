@@ -2,7 +2,7 @@
 description: "A detailed workflow for Cline (the AI assistant) to review Pull Requests specifically for the Cline project, utilizing the gh CLI and internal knowledge."
 author: "Cline Team"
 version: "1.0"
-tags: ["pr review", "github", "cline project", "ai workflow", "gh cli"]
+tags: ["pr review", "PRレビュー", "github", "GitHub", "cline project", "clineプロジェクト", "ai workflow", "AIワークフロー", "gh cli"]
 globs: ["*.*"]
 ---
 You have access to the `gh` terminal command. I already authenticated it for you. Please review it to use the PR that I asked you to review. You're already in the `cline` repo.

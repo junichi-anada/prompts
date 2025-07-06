@@ -1,77 +1,78 @@
 ---
-title: "HTML5 コーディング規約 ベストプラクティス"
-description: "HTML5でウェブページを作る時に、コードをきれいにしたり、みんなが使いやすくしたり、検索エンジンに見つけてもらいやすくするための大事なルールだよ！"
+title: "HTML5 Coding Standards Best Practices"
+description: "Essential rules for creating web pages with HTML5 - keep your code clean, make it accessible to everyone, and optimize for search engines!"
 author: "Reco"
+version: "1.0"
 date: "2025-06-03"
-tag: ["HTML5", "コーディング規約", "ベストプラクティス", "ウェブ開発"]
-globs: *
+tags: ["HTML5", "coding-standards", "best-practices", "web-development", "コーディング規約", "ベストプラクティス", "ウェブ開発"]
+globs: ["*"]
 ---
 
-### HTML5 コーディング規約 ベストプラクティス（レコのおすすめポイント！✨）
+### HTML5 Coding Standards Best Practices (Recommended Points! ✨)
 
-HTML5でウェブページを作る時に、コードをきれいにしたり、みんなが使いやすくしたり、検索エンジンに見つけてもらいやすくするための大事なルールだよ！
+Essential rules for creating web pages with HTML5 - keep your code clean, make it accessible to everyone, and optimize for search engines!
 
 ---
 
-#### 1. 基本の「き」！ドキュメントの準備 📄
+#### 1. Document Preparation Basics! 📄
 
-*   **`<!DOCTYPE html>` は必ず書こう！**
-    *   これは「このファイルはHTML5だよ！」ってコンピューターに教えるおまじないみたいなもの。一番最初に書くんだよ。
-*   **文字は `UTF-8` にしよう！**
-    *   日本語も英語も、いろんな国の文字をちゃんと表示するために、`<head>` の中に `<meta charset="UTF-8">` って書くのがおすすめ。
-*   **何語のページか教えてあげよう！**
-    *   `<html>` タグに `lang="ja"` って書くと、検索エンジンや目の不自由な人が使う読み上げソフトが「このページは日本語だね！」ってわかるようになるよ。
+*   **Always write `<!DOCTYPE html>`!**
+    *   This is like telling the computer "This file is HTML5!" Write it at the very beginning.
+*   **Set character encoding to `UTF-8`!**
+    *   To properly display Japanese, English, and characters from various countries, write `<meta charset="UTF-8">` in the `<head>` section.
+*   **Specify the page language!**
+    *   Writing `lang="ja"` in the `<html>` tag helps search engines and screen readers understand "This page is in Japanese!"
 
-#### 2. ページの見た目を整える魔法 ✨
+#### 2. Page Layout Magic ✨
 
-*   **スマホでも見やすくする設定を忘れずに！**
-    *   `<head>` の中に `<meta name="viewport" content="width=device-width, initial-scale=1.0">` って書くと、スマホの画面サイズに合わせて自動で調整してくれるようになるよ。
+*   **Don't forget mobile-friendly settings!**
+    *   Writing `<meta name="viewport" content="width=device-width, initial-scale=1.0">` in the `<head>` makes the page automatically adjust to mobile screen sizes.
 
-#### 3. 意味のあるタグを使おう！ 💡
+#### 3. Use Meaningful Tags! 💡
 
-*   **タグにはそれぞれ意味があるんだ！**
-    *   `header`（ページの頭）、`nav`（メニュー）、`main`（一番大事な内容）、`article`（記事）、`section`（まとまり）、`aside`（補足情報）、`footer`（ページの足）みたいに、内容に合ったタグを使うと、コンピューターも人間もページの構造が分かりやすくなるよ。
-    *   見出しは `<h1>` から `<h6>` まで、順番に使うのが大事！
-*   **`<div>` や `<span>` は、他に合うタグがない時にだけ使おう！**
-    *   これらは「ただの箱」だから、意味を持たせたい時はセマンティックなタグを使おうね。
+*   **Tags have specific meanings!**
+    *   Use content-appropriate tags like `header` (page header), `nav` (navigation menu), `main` (main content), `article` (article), `section` (section), `aside` (sidebar content), `footer` (page footer) to help both computers and humans understand page structure.
+    *   Use headings `<h1>` through `<h6>` in proper order!
+*   **Use `<div>` and `<span>` only when no other suitable tag exists!**
+    *   These are "generic containers," so use semantic tags when you want to convey meaning.
 
-#### 4. コードをきれいに書くコツ 🧹
+#### 4. Tips for Writing Clean Code 🧹
 
-*   **インデント（字下げ）は揃えよう！**
-    *   スペース2つか4つ、またはタブを使うか、チームで決めて統一すると、コードが読みやすくなるよ。
-*   **大事なブロックの間には空行を入れよう！**
-    *   コードのまとまりが分かりやすくなって、見やすくなるよ。
-*   **タグ名や属性名は小文字で書こう！**
-    *   HTML5では大文字でも動くけど、小文字に統一するとスッキリするし、間違いも減るよ。
-*   **属性の値はダブルクォーテーションで囲もう！**
-    *   `<input type="text" value="こんにちは">` みたいにね。
-*   **コメントは必要なところにだけ書こう！**
-    *   「ここ、ちょっと複雑だから説明しとこう！」って時に使うと、後で見た時に助かるよ。
+*   **Keep indentation consistent!**
+    *   Decide as a team whether to use 2 or 4 spaces, or tabs, for consistent, readable code.
+*   **Add blank lines between important blocks!**
+    *   This makes code groupings clearer and more readable.
+*   **Write tag names and attribute names in lowercase!**
+    *   While HTML5 works with uppercase, using lowercase is cleaner and reduces errors.
+*   **Wrap attribute values in double quotes!**
+    *   Like `<input type="text" value="hello">`.
+*   **Add comments only where necessary!**
+    *   Use them when thinking "This is a bit complex, let me explain!" - they'll be helpful later.
 
-#### 5. 画像とリンクの注意点 🖼️🔗
+#### 5. Images and Links Considerations 🖼️🔗
 
-*   **画像には `alt` 属性を必ずつけよう！**
-    *   `<img src="cat.jpg" alt="かわいい猫の写真">` みたいに、画像の内容を説明するテキストを入れるんだ。画像が見えなくても、何の写真か分かるようにするためだよ。
-*   **リンクの文字は分かりやすく！**
-    *   「ここをクリック」じゃなくて、「商品詳細を見る」みたいに、リンク先がどんな内容か分かるように書こうね。
-*   **外部リンクには `target="_blank"` と `rel="noopener noreferrer"` をセットで！**
-    *   新しいタブで開く時に、セキュリティとパフォーマンスのためにこの2つを一緒に使うのがおすすめだよ。
+*   **Always add `alt` attributes to images!**
+    *   Like `<img src="cat.jpg" alt="cute cat photo">`, include text describing the image content. This helps people understand what the photo shows even when images can't be seen.
+*   **Make link text descriptive!**
+    *   Instead of "click here," write "view product details" to clearly indicate the link destination.
+*   **Use `target="_blank"` and `rel="noopener noreferrer"` together for external links!**
+    *   When opening in new tabs, using these two together is recommended for security and performance.
 
-#### 6. CSSとJavaScriptの読み込み方 🚀
+#### 6. Loading CSS and JavaScript 🚀
 
-*   **CSSは `<head>` の中で読み込もう！**
-    *   `<link rel="stylesheet" href="style.css">` って書くと、ページが表示される前にスタイルが適用されて、見た目が崩れるのを防げるよ。
-*   **JavaScriptは `</body>` の直前で読み込もう！**
-    *   `<script src="script.js"></script>` って書くと、HTMLの読み込みが終わってからJavaScriptが動くから、ページが早く表示されるようになるよ。
+*   **Load CSS in the `<head>` section!**
+    *   Writing `<link rel="stylesheet" href="style.css">` applies styles before page display, preventing layout flash.
+*   **Load JavaScript just before `</body>`!**
+    *   Writing `<script src="script.js"></script>` there makes JavaScript run after HTML loading completes, speeding up page display.
 
-#### 7. フォームは使いやすく！ 📝
+#### 7. Make Forms User-Friendly! 📝
 
-*   **入力欄には `label` をつけよう！**
-    *   `<label for="name">名前：</label><input type="text" id="name">` みたいに、どの入力欄が何のためのものか、はっきりわかるようにするんだ。
-*   **入力タイプは正しく選ぼう！**
-    *   メールアドレスなら `type="email"`、電話番号なら `type="tel"` って指定すると、スマホで入力しやすくなるよ。
+*   **Add `label` elements to input fields!**
+    *   Like `<label for="name">Name:</label><input type="text" id="name">`, make it clear what each input field is for.
+*   **Choose correct input types!**
+    *   Specifying `type="email"` for email addresses or `type="tel"` for phone numbers makes mobile input easier.
 
-#### 8. 最後にチェック！ ✅
+#### 8. Final Check! ✅
 
-*   **W3Cのバリデーターでエラーがないか確認しよう！**
-    *   これは、HTMLの文法チェックをしてくれるツールだよ。エラーがないか確認して、品質の高いコードを目指そうね。
+*   **Use W3C validator to check for errors!**
+    *   This tool checks HTML syntax. Verify there are no errors to aim for high-quality code.

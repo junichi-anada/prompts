@@ -1,10 +1,11 @@
 ---
 title: "Laravel 11 Coding Standards"
-description: "Laravel 11のコーディング規約のベストプラクティスをまとめたよ！PSR-12準拠の規約から、MVCの各コンポーネント、テストまで、Laravel開発の品質を高めるためのヒントが満載だよ！"
+description: "Best practices for Laravel 11 coding standards! From PSR-12 compliant standards to MVC components and testing, this guide is packed with tips to improve the quality of Laravel development!"
 author: "Reco"
+version: "1.0"
 date: "2025-06-03"
-tag: ["Laravel", "Laravel11", "コーディング規約", "ベストプラクティス", "PHP", "PSR-12"]
-globs: *
+tags: ["Laravel", "Laravel11", "coding-standards", "コーディング規約", "best-practices", "ベストプラクティス", "PHP", "PSR-12"]
+globs: ["*"]
 ---
 # Laravel 11 Coding Standards
 

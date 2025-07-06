@@ -1,46 +1,47 @@
 ---
-title: "Laravel 12 コーディング規約 ベストプラクティス"
-description: "Laravel Pintを使ったPHPコードの自動整形と、Laravelプロジェクトで推奨されるコーディングスタイル、PSR-12との関係、カスタマイズ方法、CI/CDへの組み込みについてまとめたよ！"
+title: "Laravel 12 Coding Standards Best Practices"
+description: "Guide to automatic PHP code formatting with Laravel Pint, recommended coding styles for Laravel projects, relationship with PSR-12, customization methods, and CI/CD integration!"
 author: "Reco"
+version: "1.0"
 date: "2025-06-03"
-tag: ["Laravel", "Laravel12", "LaravelPint", "コーディング規約", "ベストプラクティス", "PHP", "PSR-12"]
-globs: *
+tags: ["Laravel", "Laravel12", "LaravelPint", "coding-standards", "best-practices", "PHP", "PSR-12", "コーディング規約", "ベストプラクティス"]
+globs: ["*"]
 ---
 
-### 🚀 Laravel Pintって、どんなツール？
+### 🚀 What is Laravel Pint?
 
-Laravel Pintは、PHPのコードを自動でキレイにしてくれる魔法のツールだよ！✨ 「PHP-CS-Fixer」っていう有名なツールをベースにしてるから、コードのスタイルを統一して、読みやすく、バグの少ないコードにするお手伝いをしてくれるんだ。ミニマリスト向けって言われるくらい、シンプルで使いやすいのが特徴だよ！
+Laravel Pint is a magical tool that automatically cleans up your PHP code! ✨ Built on the famous "PHP-CS-Fixer" tool, it helps unify code style, making your code more readable and less bug-prone. It's designed for minimalists - simple and easy to use!
 
-### 🛠️ Pintの基本的な使い方
+### 🛠️ Basic Usage of Pint
 
-Pintを使うのはとっても簡単！
+Using Pint is super simple!
 
-1.  **インストール**: LaravelプロジェクトにPintを追加するよ。
+1.  **Installation**: Add Pint to your Laravel project.
     ```bash
     composer require laravel/pint --dev
     ```
-2.  **実行**: コードをチェックして修正するには、このコマンドを叩くだけ！
+2.  **Execution**: To check and fix your code, just run this command!
     ```bash
     ./vendor/bin/pint
     ```
-    これで、Pintが自動でコードをLaravelの標準スタイルに合わせてくれるよ。
+    This will automatically format your code to Laravel's standard style.
 
-### 💖 Laravelのデフォルトスタイルって？
+### 💖 What is Laravel's Default Style?
 
-Pintは、Laravelプロジェクトで推奨されるコーディングスタイルを自動で適用してくれるんだ。これは主にPHPの標準規約であるPSR-12に準拠しているんだけど、Laravel独自の「Laravel」プリセットっていうのがあって、よりLaravelらしいコードスタイルにしてくれるんだよ。
+Pint automatically applies the coding style recommended for Laravel projects. This is primarily based on PSR-12 (PHP's standard convention), but Laravel has its own "Laravel" preset that creates more Laravel-specific code style.
 
-例えば、こんなルールが適用されることが多いよ：
+For example, these rules are commonly applied:
 
-*   **インデント**: スペース4つだよ！
-*   **名前空間とuse文**: 整理されて、見やすくなるよ。
-*   **クラス・メソッドの宣言**: きちんと可視性（`public`, `protected`, `private`）が指定されるよ。
-*   **PHPDoc**: コメントの書き方もLaravel流に整えてくれるんだ。特に`@param`や`@return`の書き方にはちょっとしたルールがあるから、Pintに任せると安心だね！
+*   **Indentation**: 4 spaces!
+*   **Namespaces and use statements**: Organized and readable.
+*   **Class/method declarations**: Proper visibility (`public`, `protected`, `private`) is specified.
+*   **PHPDoc**: Comment formatting is also organized Laravel-style. There are specific rules for `@param` and `@return` formatting, so letting Pint handle it gives you peace of mind!
 
-### 🎨 自分好みにカスタマイズ！
+### 🎨 Customize to Your Preferences!
 
-Pintはデフォルトでも十分便利だけど、`pint.json`っていうファイルを作ると、自分やチームの好みに合わせてルールをカスタマイズできるんだ！
+While Pint is plenty useful by default, you can create a `pint.json` file to customize rules to your or your team's preferences!
 
-プロジェクトのルートディレクトリに`pint.json`ファイルを作成して、こんな風に設定を書き込むと、Pintがその設定に従ってくれるよ。
+Create a `pint.json` file in your project's root directory and write configuration like this, and Pint will follow those settings:
 
 ```json
 {
@@ -63,14 +64,16 @@ Pintはデフォルトでも十分便利だけど、`pint.json`っていうフ�
 }
 ```
 
-これで、特定のルールを無効にしたり、細かく調整したりできるから、コードスタイルを完全にコントロールできるね！
+This way, you can disable specific rules or fine-tune them, giving you complete control over your code style!
 
-### 🤝 PSR-12との関係
+### 🤝 Relationship with PSR-12
 
-Laravel Pintは、PHPの公式なコーディング標準であるPSR-12に準拠しているよ。だから、Pintを使えば、LaravelプロジェクトのコードがPHPコミュニティ全体で読みやすい、標準的なスタイルになるんだ。PSR-12の基本的なルール（ファイルの基本ルール、行の長さ、インデント、名前空間、クラス・メソッドの書き方など）はPintによって自動的に守られるから、Junはコードの中身に集中できるね！
+Laravel Pint complies with PSR-12, PHP's official coding standard. So by using Pint, your Laravel project code becomes readable and standardized across the entire PHP community. Basic PSR-12 rules (file basics, line length, indentation, namespaces, class/method formatting, etc.) are automatically enforced by Pint, so you can focus on your code content!
 
-### 💡 ベストプラクティスのヒント
+### 💡 Best Practice Tips
 
-*   **CI/CDに組み込む**: コードをコミットする前にPintを自動実行するように設定すると、常にクリーンなコードを保てるよ。GitHub Actionsとかで設定すると便利だね！
-*   **定期的に実行**: 新しいコードを書いたら、こまめにPintを実行して、スタイルを整える習慣をつけるといいよ。
-*   **チームで共有**: チームで開発しているなら、`pint.json`ファイルを共有して、みんなで同じコーディングスタイルを保つのがおすすめ！
+*   **Integrate into CI/CD**: Set up automatic Pint execution before committing code to always maintain clean code. Setting it up with GitHub Actions is convenient!
+*   **Run regularly**: After writing new code, make it a habit to run Pint frequently to keep your style consistent.
+*   **Share with team**: When developing as a team, share the `pint.json` file to maintain the same coding style across everyone!
+
+These guidelines will help you maintain consistent, high-quality Laravel code using Pint!

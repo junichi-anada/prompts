@@ -2,7 +2,7 @@
 description: Defines Cline's mandatory protocol for self-reflection, persistent knowledge capture using dedicated logs, and continuous improvement of its operational knowledge before task completion.
 author: https://github.com/jeanibarz
 version: 1.0
-tags: ["protocol", "meta", "learning", "reflection", "knowledge-management", "core-behavior"]
+tags: ["protocol", "プロトコル", "meta", "メタ", "learning", "学習", "reflection", "リフレクション", "knowledge-management", "知識管理", "core-behavior", "コア動作"]
 globs: ["*"] # This core protocol is always active and applies to all Cline operations.
 ---
 # Cline Continuous Improvement Protocol

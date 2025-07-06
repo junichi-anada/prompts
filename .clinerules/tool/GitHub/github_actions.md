@@ -1,10 +1,11 @@
 ---
 title: "GitHub Actions Rules"
-description: "GitHub Actionsのワークフローにおけるツール実行パスの指定や、CI/CD環境での一貫した実行を保証するためのルールをまとめたよ！"
+description: "Rules for specifying tool execution paths in GitHub Actions workflows and ensuring consistent execution in CI/CD environments!"
 author: "Reco"
+version: "1.0"
 date: "2025-06-03"
-tag: ["GitHub Actions", "CI/CD", "ベストプラクティス", "ワークフロー"]
-globs: *
+tags: ["GitHub Actions", "CI/CD", "best-practices", "ベストプラクティス", "workflow", "ワークフロー"]
+globs: ["*"]
 ---
 
 # GitHub Actions Rules

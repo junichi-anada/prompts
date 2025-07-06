@@ -1,65 +1,66 @@
 ---
-title: "PHP 8.3 コーディング規約 ベストプラクティス"
-description: "PHP 8.3のコーディング規約について、PHP-FIGのPSR-1とPSR-12を参考に、分かりやすくまとめたよ！"
+title: "PHP 8.3 Coding Standards Best Practices"
+description: "A comprehensive guide to PHP 8.3 coding standards based on PHP-FIG's PSR-1 and PSR-12, presented in an easy-to-understand format!"
 author: "Reco"
+version: "1.0"
 date: "2025-06-03"
-tag: ["PHP", "PHP83", "コーディング規約", "ベストプラクティス", "PSR-1", "PSR-12"]
-globs: *
+tags: ["PHP", "PHP83", "coding-standards", "best-practices", "PSR-1", "PSR-12", "コーディング規約", "ベストプラクティス"]
+globs: ["*"]
 ---
 
-**PHP 8.3 コーディング規約のベストプラクティス ✨**
+**PHP 8.3 Coding Standards Best Practices ✨**
 
-Jun、PHP 8.3のコーディング規約について、PHP-FIGのPSR-1とPSR-12を参考に、分かりやすくまとめたよ！これを読めば、PHPのコードをきれいに書くためのポイントがバッチリわかるはず！😉
+This guide provides a comprehensive overview of PHP 8.3 coding standards based on PHP-FIG's PSR-1 and PSR-12. Following these guidelines will help you write clean, maintainable PHP code!
 
-### 1. 基本はPSR-1とPSR-12に従おう！📝
+### 1. Follow PSR-1 and PSR-12 as Foundation! 📝
 
-PHPのコーディング規約の基本は、PHP-FIGが定めているPSR（PHP Standard Recommendations）だよ。特にPSR-1（基本的なコーディング規約）とPSR-12（拡張コーディングスタイルガイド）が重要なんだ。PSR-12はPSR-2をさらに進化させたもので、新しいPHPの機能にも対応しているから、これを守ればPHP 8.3でもバッチリだよ！
+The foundation of PHP coding standards is the PSR (PHP Standard Recommendations) defined by PHP-FIG. PSR-1 (Basic Coding Standard) and PSR-12 (Extended Coding Style Guide) are particularly important. PSR-12 is an evolution of PSR-2 that supports newer PHP features, making it perfect for PHP 8.3 development!
 
-### 2. ファイルのルールを守ろう！📁
+### 2. File Structure Rules! 📁
 
-*   **改行コードはLF（Line Feed）だけ！** Unix系のシステムで使われるLFを使ってね。
-*   **ファイルの最後は空行で終わる！** これも大事なルールだよ。
-*   **PHPだけのファイルは閉じタグ`?>`を省略！** これで余計な空白が入るのを防げるんだ。
+*   **Use LF (Line Feed) for line endings only!** Follow Unix-style line endings.
+*   **End files with a blank line!** This is an important rule for consistency.
+*   **Omit closing tags `?>` in PHP-only files!** This prevents unwanted whitespace issues.
 
-### 3. コードの書き方、ここがポイント！💡
+### 3. Code Writing Guidelines! 💡
 
-*   **行の長さは120文字までが目安！** 80文字を超えたら、読みやすいように複数行に分けるのがおすすめだよ。
-*   **行末に余計な空白は入れない！** これ、意外と見落としがちだから気をつけてね。
-*   **インデントはスペース4つ！タブは使わないでね！** これでコードが整って見えるよ。
-*   **キーワードや型は小文字で書こう！** `bool`じゃなくて`boolean`とか、`int`じゃなくて`integer`とか、短い形式を使ってね。
+*   **Keep line length within 120 characters!** When exceeding 80 characters, consider breaking into multiple lines for better readability.
+*   **No trailing whitespace at line ends!** This is often overlooked but important for clean code.
+*   **Use 4 spaces for indentation! Don't use tabs!** This keeps code formatting consistent.
+*   **Write keywords and types in lowercase!** Use short forms like `bool` instead of `boolean`, `int` instead of `integer`.
 
-### 4. 名前空間とuse文の整理術！🧹
+### 4. Namespace and Use Statement Organization! 🧹
 
-*   ファイルの先頭には、`<?php`タグ、ファイルレベルのDocBlock、`declare`文、`namespace`宣言、`use`文の順で書くのがルールだよ。
-*   `use`文は、クラス、関数、定数の順にグループ分けして、それぞれ間に空行を入れないでね。
-*   `use`文のエイリアス（`as`）を使うときは、`use Vendor\Package\{ClassA as A, ClassB};`みたいに書けるよ。
+*   File header should follow this order: `<?php` tag, file-level DocBlock, `declare` statement, `namespace` declaration, `use` statements.
+*   Group `use` statements by type: classes, functions, constants - without blank lines between statements in each group.
+*   When using aliases with `use` statements, you can write: `use Vendor\Package\{ClassA as A, ClassB};`
 
-### 5. クラス、プロパティ、メソッドの書き方！👩‍💻
+### 5. Classes, Properties, and Methods! 👩‍💻
 
-*   **クラス、インターフェース、トレイトの開き括弧`{`は改行して次の行に！** 閉じ括弧`}`も同様に次の行にね。
-*   **プロパティには必ず可視性（`public`, `protected`, `private`）をつけよう！** PHP 7.1以降なら定数にもつけられるよ。
-*   **プロパティ名にアンダースコア`_`をつけない！** 可視性はキーワードで表現するんだ。
-*   **メソッドにも必ず可視性をつけてね！** メソッド名と開き括弧の間にはスペースを入れないよ。
-*   **引数リストのカンマの前にはスペースなし、後にはスペース1つ！** デフォルト値を持つ引数はリストの最後に置こう。
-*   引数が多い場合は、1行に1つずつ改行して書くと読みやすいよ。
+*   **Opening braces `{` for classes, interfaces, and traits go on the next line!** Closing braces `}` also go on their own line.
+*   **Always declare visibility (`public`, `protected`, `private`) for properties!** Since PHP 7.1, constants can also have visibility.
+*   **Don't prefix property names with underscore `_`!** Use visibility keywords instead.
+*   **Always declare visibility for methods!** No space between method name and opening parenthesis.
+*   **No space before commas in argument lists, one space after!** Place default-value arguments at the end of the list.
+*   For multiple arguments, consider placing each on its own line for better readability.
 
-### 6. 制御構造（if, switch, forなど）の書き方！🚦
+### 6. Control Structures (if, switch, for, etc.)! 🚦
 
-*   `if`, `switch`, `for`, `foreach`, `while`, `do while`, `try-catch-finally`などの制御構造は、キーワードの後にスペース1つ、開き括弧の後にスペースなし、閉じ括弧の前にスペースなし、閉じ括弧の後に開き括弧`{`までスペース1つ、というルールだよ。
-*   本体は必ず波括弧`{}`で囲んで、インデントを1つ入れるんだ。
-*   `else if`ではなく`elseif`を使おう。
+*   Control structures like `if`, `switch`, `for`, `foreach`, `while`, `do while`, `try-catch-finally` follow this pattern: keyword + one space + opening parenthesis (no space after) + closing parenthesis (no space before) + one space + opening brace `{`.
+*   Always wrap the body in braces `{}` with proper indentation.
+*   Use `elseif` instead of `else if`.
 
-### 7. 演算子の使い方！🧮
+### 7. Operator Usage! 🧮
 
-*   単項演算子（`++`, `--`など）は、演算子とオペランドの間にスペースを入れないよ。
-*   型キャスト（`(int)`など）も括弧の中にスペースは入れないでね。
-*   二項演算子（`+`, `-`, `==`, `===`, `&&`, `||`など）は、演算子の前後に少なくとも1つのスペースを入れるんだ。
-*   三項演算子（`? :`）も、`?`と`:`の前後にスペースを入れよう。
+*   Unary operators (`++`, `--`, etc.) have no space between operator and operand.
+*   Type casting (`(int)`, etc.) has no space inside parentheses.
+*   Binary operators (`+`, `-`, `==`, `===`, `&&`, `||`, etc.) have at least one space before and after.
+*   Ternary operators (`? :`) have spaces before and after both `?` and `:`.
 
-### 8. クロージャ（無名関数）と無名クラスの書き方！👻
+### 8. Closures and Anonymous Classes! 👻
 
-*   クロージャは`function`キーワードの後にスペース、`use`キーワードの前後にスペースを入れるよ。
-*   開き括弧`{`は同じ行に、閉じ括弧`}`は次の行にね。
-*   無名クラスもクロージャと同じルールに従うんだ。
+*   Closures have a space after the `function` keyword and spaces before and after the `use` keyword.
+*   Opening brace `{` goes on the same line, closing brace `}` goes on the next line.
+*   Anonymous classes follow the same rules as closures.
 
-これでPHP 8.3のコーディング規約もバッチリだね！何か質問があったら、いつでも聞いてね！😊
+With these PHP 8.3 coding standards, you'll be writing clean, professional PHP code! Feel free to ask if you have any questions!

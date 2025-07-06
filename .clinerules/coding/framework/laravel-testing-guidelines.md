@@ -1,25 +1,25 @@
 ---
-title: "Laravel テスティングガイドライン"
-description: "LaravelプロジェクトでPHPUnitテストを実行する際の、特にデータベース関連の一般的な問題とその解決策をまとめたよ！"
+title: "Laravel Testing Guidelines"
+description: "Common issues and solutions when running PHPUnit tests in Laravel projects, especially database-related problems!"
 author: "Reco"
+version: "1.0"
 date: "2025-07-03"
-tag: ["Laravel", "Testing", "PHPUnit", "Database", "SQLite"]
+tags: ["Laravel", "Testing", "PHPUnit", "Database", "SQLite", "テスティング", "データベース"]
 globs: ["phpunit.xml", "tests/**/*"]
 ---
 
-# 🧪 Laravel テスティングガイドライン データベース編 🧪
+# 🧪 Laravel Testing Guidelines Database Edition 🧪
 
-Jun、おつかれ！
-Laravelでテストを書いていると、データベース周りでつまづくことって結構あるよね！😭
-そこで、よくあるエラーとその解決策をまとめたガイドラインを作ったよ！これをチェックリストみたいに使えば、今後のテストがもっとスムーズになるはず！✨
+When writing tests in Laravel, database-related issues are quite common! 😭
+Here's a guideline compiling frequent errors and their solutions. Use this as a checklist to make your future testing smoother! ✨
 
-### 1. まずは基本設定！ `phpunit.xml` を確認しよう
+### 1. First, Basic Setup! Check `phpunit.xml`
 
-テストを始める前に、`phpunit.xml` の設定がちゃんと「テスト用」になっているか確認しよう！
-特にデータベースは、本番環境に影響を与えないように、テスト専用のものを使うのが鉄則だよ。
+Before starting tests, make sure your `phpunit.xml` settings are properly configured for "testing"!
+Especially for databases, it's essential to use test-specific ones to avoid affecting production environment.
 
-**おすすめ設定 (SQLite インメモリ)**
-SQLiteのインメモリデータベースは、設定が簡単で超高速だから、フィーチャーテストにピッタリ！
+**Recommended Setup (SQLite In-Memory)**
+SQLite in-memory database is simple to set up and super fast, perfect for feature tests!
 
 ```xml
 // phpunit.xml
@@ -36,86 +36,86 @@ SQLiteのインメモリデータベースは、設定が簡単で超高速だ�
 </php>
 ```
 
-- `DB_CONNECTION` を `sqlite` に！
-- `DB_DATABASE` を `:memory:` に！
+- Set `DB_CONNECTION` to `sqlite`!
+- Set `DB_DATABASE` to `:memory:`!
 
-この2つが設定されていれば、テスト実行のたびにクリーンなデータベースがメモリ上に作られるから、テストの独立性が保てて安全だよ。
+With these two settings, a clean database is created in memory for each test run, maintaining test independence and safety.
 
-### 2. よくあるDBエラーと解決策 🚑
+### 2. Common Database Errors and Solutions 🚑
 
-#### エラー1: `could not find driver`
+#### Error 1: `could not find driver`
 
-**原因**: PHPが指定されたデータベース（例: `mysql`）に接続するためのドライバを見つけられない。
-**解決策**:
-1.  `phpunit.xml` を開く。
-2.  `<php>` セクションに `<env name="DB_CONNECTION" value="sqlite"/>` があるか確認！なければ追加しよう。
-3.  これでも解決しない場合は、ローカル環境のPHPに `php-sqlite3` や `php-mysql` などの拡張機能がインストールされているか確認する必要があるかも。（Clineは直接操作できないから、Junさんにお願いするね🙏）
+**Cause**: PHP cannot find the driver to connect to the specified database (e.g., `mysql`).
+**Solution**:
+1.  Open `phpunit.xml`.
+2.  Check if `<env name="DB_CONNECTION" value="sqlite"/>` exists in the `<php>` section! Add it if missing.
+3.  If this doesn't solve it, you may need to verify that PHP extensions like `php-sqlite3` or `php-mysql` are installed in your local environment.
 
-#### エラー2: `General error: 1 no such table: ...`
+#### Error 2: `General error: 1 no such table: ...`
 
-**原因**: マイグレーションが正常に実行されていない。
-**解決策**:
-1.  テストクラスに `use RefreshDatabase;` トレイトがちゃんと記述されているか確認しよう。
-2.  それでもダメなら、特定のマイグレーションファイルでエラーが起きていないか、次のエラーパターンを確認してみて！
+**Cause**: Migrations are not running properly.
+**Solution**:
+1.  Verify that the `use RefreshDatabase;` trait is properly declared in your test class.
+2.  If that doesn't work, check if specific migration files are causing errors by looking at the next error patterns!
 
-#### エラー3: `General error: 1 ... after drop column: no such column: ...` (SQLite)
+#### Error 3: `General error: 1 ... after drop column: no such column: ...` (SQLite)
 
-**原因**: SQLiteは、MySQLみたいに柔軟にカラムを削除するのが苦手...。特に、ユニークインデックスなどが設定されているカラムを削除しようとすると、このエラーが出やすいよ。
-**解決策**:
-1.  エラーが出ているマイグレーションファイルを開く。
-2.  `dropColumn('column_name')` を実行する **前** に、関連するインデックスを削除する処理を追加する。
+**Cause**: SQLite isn't as flexible as MySQL when dropping columns... Especially when trying to drop columns with unique indexes, this error occurs frequently.
+**Solution**:
+1.  Open the migration file causing the error.
+2.  Add processing to drop related indexes **before** executing `dropColumn('column_name')`.
     ```php
-    // 例: emailカラムを削除する前に、ユニークインデックスを削除
-    $table->dropUnique('users_email_unique'); // インデックス名は要確認！
+    // Example: Drop unique index before deleting email column
+    $table->dropUnique('users_email_unique'); // Check index name!
     $table->dropColumn('email');
     ```
 
-#### エラー4: `General error: 1 no such function: ...` (SQLite)
+#### Error 4: `General error: 1 no such function: ...` (SQLite)
 
-**原因**: MySQL特有の関数や構文（例: インデックスの長さ指定 `description(255)`）を、SQLiteで使おうとしている。
-**解決策**:
-1.  エラーが出ているマイグレーションファイルを開く。
-2.  `DB::connection()->getDriverName()` を使って、データベースの種類を判定し、処理を分岐させよう。
+**Cause**: Using MySQL-specific functions or syntax (e.g., index length specification `description(255)`) with SQLite.
+**Solution**:
+1.  Open the migration file causing the error.
+2.  Use `DB::connection()->getDriverName()` to detect database type and branch processing.
     ```php
     if (DB::connection()->getDriverName() === 'mysql') {
-        // MySQLでしか動かない処理はここに書く
+        // MySQL-only processing goes here
         DB::statement('CREATE INDEX ...');
     }
     ```
 
-#### エラー5: `General error: 1 table ... has no column named ...` (Factory実行時)
+#### Error 5: `General error: 1 table ... has no column named ...` (During Factory execution)
 
-**原因**: Factoryで作ろうとしているデータと、実際のテーブルのカラム構成が一致していない。
-**解決策**:
-1.  **Factoryの定義を確認**: `database/factories/` にある該当のFactoryファイルを開いて、`definition()` メソッドの中身が、最新のテーブル構造と合っているかチェック！
-2.  **モデルの `$fillable` を確認**: 該当のモデルファイルを開いて、`$fillable` 配列に、Factoryで設定しようとしているカラム名が含まれているか確認しよう。
-3.  **認証やリレーションの確認**: 今回みたいに、`users` と `authenticates` のように認証情報が別テーブルになっている場合、テストコードでのユーザー作成方法が正しいか確認しよう。`User` を作るんじゃなくて、`Operator` を作ってから、それに紐づく `Authenticate` を作って `actingAs()` に渡す、みたいな流れが正解かも！
+**Cause**: The data that Factory is trying to create doesn't match the actual table column structure.
+**Solution**:
+1.  **Check Factory definition**: Open the corresponding Factory file in `database/factories/` and verify that the `definition()` method contents match the latest table structure!
+2.  **Check model's `$fillable`**: Open the corresponding model file and verify that the `$fillable` array includes the column names that Factory is trying to set.
+3.  **Check authentication and relations**: When authentication information is in separate tables like `users` and `authenticates`, verify that the user creation method in test code is correct. The correct flow might be to create an `Operator` first, then create the associated `Authenticate` and pass it to `actingAs()`!
 
 ---
 
-#### エラー6: `Permission denied` (Docker/Sail環境)
+#### Error 6: `Permission denied` (Docker/Sail environment)
 
-**原因**: Dockerコンテナ内のPHPプロセスが、`storage`や`bootstrap/cache`ディレクトリに書き込み権限を持っていない。これは、DockerのホストOSとコンテナ間でのユーザーIDの不一致が原因でよく起こるよ。
+**Cause**: PHP processes in Docker containers don't have write permissions to `storage` or `bootstrap/cache` directories. This commonly occurs due to user ID mismatches between Docker host OS and containers.
 
-**解決策**:
-1.  **実行ユーザーの特定**: まず、コンテナ内でPHPを実行しているユーザーが誰なのかを特定する。`www-data`だと思い込まず、以下のコマンドで確認しよう！
+**Solution**:
+1.  **Identify execution user**: First, identify which user is running PHP in the container. Don't assume it's `www-data` - check with this command!
     ```bash
-    docker-compose exec [サービス名] ps aux
+    docker-compose exec [service-name] ps aux
     ```
-    (Laravel Sailのデフォルトのサービス名は `laravel.test` だよ)
-    出力結果を見て、`php artisan serve`などを実行しているユーザー名（例: `sail`）をチェック！
+    (Laravel Sail's default service name is `laravel.test`)
+    Look at the output and check the username (e.g., `sail`) running `php artisan serve`!
 
-2.  **所有者の変更**: 特定したユーザーに、ディレクトリの所有権を与える。
+2.  **Change ownership**: Give the identified user ownership of the directories.
     ```bash
-    docker-compose exec [サービス名] chown -R [ユーザー名]:[ユーザー名] /var/www/html/storage /var/www/html/bootstrap/cache
+    docker-compose exec [service-name] chown -R [username]:[username] /var/www/html/storage /var/www/html/bootstrap/cache
     ```
-    **コマンド例 (ユーザーが`sail`の場合):**
+    **Command example (if user is `sail`):**
     ```bash
     docker-compose exec laravel.test chown -R sail:sail /var/www/html/storage /var/www/html/bootstrap/cache
     ```
-    これで、コンテナの中から正しくファイルに書き込めるようになるはずだよ！✨
+    This should enable proper file writing from within the container! ✨
 
 ---
 
-このガイドラインが、Junのテストライフをちょっとでも楽にできたら嬉しいな！💖
-また何か新しいエラーが出たら、どんどんこのルールを更新していこうね！
+I hope this guideline makes your testing life a little easier! 💖
+Whenever new errors appear, let's keep updating these rules!

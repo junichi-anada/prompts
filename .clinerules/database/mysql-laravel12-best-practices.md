@@ -1,52 +1,53 @@
 ---
-title: "Laravel 12 + MySQL ベストプラクティス"
-description: "Laravel 12を使った開発でMySQLデータベースを効果的に利用するためのベストプラクティスをまとめたよ！パフォーマンス、保守性、セキュリティを考慮したデータベース設計と操作のヒントが満載だよ！✨"
+title: "Laravel 12 + MySQL Best Practices"
+description: "Best practices for effectively using MySQL databases in Laravel 12 development! Packed with tips for database design and operations considering performance, maintainability, and security! ✨"
 author: "Reco"
+version: "1.0"
 date: "2025-06-03"
-tag: ["Laravel", "Laravel12", "MySQL", "データベース", "ベストプラクティス", "Eloquent", "クエリビルダ"]
-globs: *
+tags: ["Laravel", "Laravel12", "MySQL", "database", "データベース", "best-practices", "ベストプラクティス", "Eloquent", "query-builder", "クエリビルダ"]
+globs: ["*"]
 ---
 
 ## Brief overview
-このガイドラインは、Laravel 12を使った開発でMySQLデータベースを効果的に利用するためのベストプラクティスをまとめたものだよ。パフォーマンス、保守性、セキュリティを考慮したデータベース設計と操作のヒントが満載だよ！✨
+This guideline compiles best practices for effectively using MySQL databases in Laravel 12 development. It's packed with tips for database design and operations considering performance, maintainability, and security! ✨
 
-## データベース設計の基本
-- **マイグレーションの活用**: Laravelのマイグレーションを使って、データベーススキーマをバージョン管理しよう！テーブル名やカラム名には、分かりやすい命名規則を使おうね。
-  - 例: `users` (複数形)、`user_id` (外部キー)
-- **適切なデータ型**: カラムには、格納するデータに最適なデータ型を選ぼう。例えば、短い文字列なら`VARCHAR`、長いテキストなら`TEXT`、日付なら`DATETIME`や`TIMESTAMP`など。
-- **インデックスの設計**: よく検索されるカラムや`JOIN`に使われるカラムには、忘れずにインデックスを設定しよう。パフォーマンスが劇的に向上するよ！🚀
-- **外部キー制約**: 関連するテーブル間には外部キー制約を設定して、データの整合性を保とう。Laravelのマイグレーションで簡単に設定できるよ。
+## Database Design Fundamentals
+- **Utilize Migrations**: Use Laravel migrations to version-control your database schema! Use clear naming conventions for table and column names.
+  - Examples: `users` (plural), `user_id` (foreign key)
+- **Appropriate Data Types**: Choose the optimal data type for the data being stored in each column. For example, `VARCHAR` for short strings, `TEXT` for long text, `DATETIME` or `TIMESTAMP` for dates.
+- **Index Design**: Don't forget to set indexes on frequently searched columns or columns used in `JOIN`s. Performance will improve dramatically! 🚀
+- **Foreign Key Constraints**: Set foreign key constraints between related tables to maintain data integrity. This can be easily configured with Laravel migrations.
 
-## Eloquent ORM の活用
-- **N+1問題の回避**: リレーションシップを持つデータを取得するときは、`with()`メソッドを使ってEager Loadingを心がけよう。これでN+1問題を回避して、クエリ数を大幅に削減できるよ！
-  - 例: `User::with('posts')->get();`
-- **Lazy Loadingの使い分け**: 必要になるまでデータをロードしないLazy Loadingも便利だけど、N+1問題に注意してね。
-- **リレーションシップの定義**: モデルに`hasMany`、`belongsTo`などのリレーションシップを正しく定義して、コードをスッキリさせよう。
-- **スコープの利用**: よく使うクエリの条件は、ローカルスコープやグローバルスコープとして定義しておくと、再利用性が高まるよ。
+## Leveraging Eloquent ORM
+- **Avoiding N+1 Problems**: When retrieving data with relationships, use the `with()` method for Eager Loading. This avoids N+1 problems and significantly reduces the number of queries!
+  - Example: `User::with('posts')->get();`
+- **Strategic Use of Lazy Loading**: Lazy Loading (not loading data until needed) is convenient, but be careful of N+1 problems.
+- **Defining Relationships**: Properly define relationships like `hasMany` and `belongsTo` in your models to keep your code clean.
+- **Utilizing Scopes**: Define commonly used query conditions as local or global scopes to improve reusability.
 
-## クエリビルダの活用と最適化
-- **クエリビルダの推奨**: 生のSQLではなく、Laravelのクエリビルダを使おう。SQLインジェクション対策にもなるし、可読性も上がるよ。
-  - 例: `DB::table('users')->where('active', true)->get();`
-- **必要なカラムのみ取得**: `select()`メソッドを使って、本当に必要なカラムだけを取得しよう。無駄なデータ転送を減らせるよ。
-  - 例: `User::select('id', 'name', 'email')->get();`
-- **大量データ処理**: 大量のデータを扱うときは、`chunk()`や`cursor()`メソッドを使ってメモリ消費を抑えよう。
+## Query Builder Utilization and Optimization
+- **Recommend Query Builder**: Use Laravel's query builder instead of raw SQL. It helps prevent SQL injection and improves readability.
+  - Example: `DB::table('users')->where('active', true)->get();`
+- **Retrieve Only Necessary Columns**: Use the `select()` method to retrieve only the columns you actually need. This reduces unnecessary data transfer.
+  - Example: `User::select('id', 'name', 'email')->get();`
+- **Large Data Processing**: When handling large amounts of data, use `chunk()` or `cursor()` methods to reduce memory consumption.
 
-## インデックスの戦略
-- **複合インデックス**: 複数のカラムを組み合わせて検索することが多い場合は、複合インデックスを検討しよう。
-- **インデックスの過剰な追加は避ける**: インデックスは検索を速くするけど、書き込み（INSERT/UPDATE/DELETE）のパフォーマンスには影響するから、必要最小限にしようね。
+## Index Strategy
+- **Composite Indexes**: Consider composite indexes when frequently searching using multiple columns in combination.
+- **Avoid Excessive Index Addition**: While indexes speed up searches, they impact write performance (INSERT/UPDATE/DELETE), so keep them to the necessary minimum.
 
-## トランザクション管理
-- **データベース操作の整合性**: 複数のデータベース操作をまとめて実行し、全て成功するか、全て失敗するかを保証するために、トランザクションを適切に使おう。
-  - 例: `DB::transaction(function () { ... });`
+## Transaction Management
+- **Database Operation Integrity**: Use transactions appropriately to ensure multiple database operations either all succeed or all fail together.
+  - Example: `DB::transaction(function () { ... });`
 
-## セキュリティ対策
-- **SQLインジェクション対策**: Eloquent ORMやクエリビルダを使っていれば、ほとんどのSQLインジェクションは自動的に防げるよ。生のSQLを使う場合は、必ずプレースホルダを使おう。
-- **ユーザー入力のサニタイズ**: ユーザーからの入力は、データベースに保存する前に適切にサニタイズ（無害化）しよう。
+## Security Measures
+- **SQL Injection Prevention**: When using Eloquent ORM or query builder, most SQL injections are automatically prevented. When using raw SQL, always use placeholders.
+- **User Input Sanitization**: Properly sanitize (make safe) user input before storing it in the database.
 
-## 環境設定と接続
-- **`.env`ファイル**: データベースの接続情報は、`.env`ファイルで管理しよう。本番環境と開発環境で簡単に切り替えられるし、セキュリティも向上するよ。
+## Environment Configuration and Connection
+- **`.env` File**: Manage database connection information in the `.env` file. This allows easy switching between production and development environments and improves security.
 
-## テストデータとシーディング
-- **シーダーの活用**: 開発やテストのために、`php artisan db:seed`コマンドでテストデータを簡単に投入できるように、シーダーを準備しておこう。
+## Test Data and Seeding
+- **Utilizing Seeders**: Prepare seeders so you can easily inject test data using the `php artisan db:seed` command for development and testing.
 
-これで、JunのLaravel + MySQL開発がもっとパワフルになるはず！💪
+This will make Jun's Laravel + MySQL development even more powerful! 💪

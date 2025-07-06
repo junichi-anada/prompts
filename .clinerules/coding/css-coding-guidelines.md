@@ -1,119 +1,120 @@
 ---
-title: "CSS コーディング規約 ベストプラクティス"
-description: "CSSのスタイルを書くときに役立つ、とっておきのベストプラクティスをまとめたよ！これを守ると、コードがもっと読みやすくなって、後から修正するのも楽になるし、みんなで協力して開発するときもスムーズになるんだ！🚀"
+title: "CSS Coding Standards Best Practices"
+description: "Essential best practices for writing CSS styles! Following these guidelines makes your code more readable, easier to maintain, and enables smoother collaborative development! 🚀"
 author: "Reco"
+version: "1.0"
 date: "2025-06-03"
-tag: ["CSS", "コーディング規約", "ベストプラクティス", "ウェブ開発", "スタイルシート"]
-globs: *
+tags: ["CSS", "coding-standards", "best-practices", "web-development", "stylesheets", "コーディング規約", "ベストプラクティス", "ウェブ開発", "スタイルシート"]
+globs: ["*"]
 ---
 
-# 🎨 CSS コーディング規約 ベストプラクティス ✨
+# 🎨 CSS Coding Standards Best Practices ✨
 
-Jun、CSSのスタイルを書くときに役立つ、とっておきのベストプラクティスをまとめたよ！これを守ると、コードがもっと読みやすくなって、後から修正するのも楽になるし、みんなで協力して開発するときもスムーズになるんだ！🚀
+These are essential best practices for writing CSS styles! Following these guidelines makes your code more readable, easier to maintain, and enables smoother collaborative development! 🚀
 
-## 1. スタイルシートの構成と整理 📚
+## 1. Stylesheet Structure and Organization 📚
 
-*   **整理整頓が大事！**
-    *   CSSファイルは、役割ごとに分けておくとスッキリするよ！例えば、基本のスタイルは`base.css`、レイアウトは`layout.css`、部品のスタイルは`components.css`みたいにね。
-    *   もしファイルを分けられないなら、関連するスタイルをグループにして、コメントで「ここはヘッダーのスタイルだよ！」みたいに見出しをつけてあげると、後から見ても分かりやすいよ！👀
-*   **いつも同じやり方で！**
-    *   インデント（字下げ）の仕方や、クラス名のつけ方、コメントの書き方なんかは、プロジェクト全体で統一しようね。バラバラだと読みにくくなっちゃうから！🙅‍♀️
-*   **読みやすさファースト！**
-    *   CSSのプロパティ（`color: red;`とか）は、一つずつ新しい行に書くのがおすすめ！
-    *   セレクタ（`body`とか`.button`とか）と、その中身（`{ ... }`）の間には、空の行を挟むと、もっと見やすくなるよ！👍
+*   **Organization is key!**
+    *   Separating CSS files by role keeps things tidy! For example, basic styles in `base.css`, layout in `layout.css`, component styles in `components.css`.
+    *   If you can't separate files, group related styles together and add comment headers like "Header styles here!" to make it easier to understand later! 👀
+*   **Always use the same approach!**
+    *   Unify indentation methods, class naming conventions, and comment writing styles across the entire project. Inconsistency makes code hard to read! 🙅‍♀️
+*   **Readability first!**
+    *   Write CSS properties (like `color: red;`) one per line for better readability!
+    *   Add blank lines between selectors (like `body` or `.button`) and their content (`{ ... }`) for better visibility! 👍
 
-## 2. スタイルの定義場所 📍
+## 2. Style Definition Location 📍
 
-*   **基本は外部ファイル！**
-    *   HTMLファイルとは別に`.css`ファイルを作って、そこにスタイルを書くのが一番いい方法だよ！こうすると、メンテナンスが楽になるし、ウェブサイトの表示も速くなるんだ！💨
-*   **`<style>`タグはたまに使うくらい！**
-    *   特定のページだけで使うスタイルで、しかも量が少ない場合だけ、HTMLの`<head>`の中に`<style>`タグで直接書くのもアリだよ。
-*   **インラインスタイルは避けてね！**
-    *   HTMLのタグの中に直接`style="color: blue;"`って書くのは、あんまり良くないんだ。後から変更するのが大変になるし、同じスタイルを使い回せないからね。💦
+*   **External files are the foundation!**
+    *   Creating separate `.css` files from HTML files is the best approach! This makes maintenance easier and speeds up website loading! 💨
+*   **Use `<style>` tags occasionally!**
+    *   Only for page-specific styles with small amounts of code, writing directly in HTML `<head>` with `<style>` tags is acceptable.
+*   **Avoid inline styles!**
+    *   Writing `style="color: blue;"` directly in HTML tags isn't ideal. It makes changes difficult later and prevents style reuse. 💦
 
-## 3. セレクタ 🎯
+## 3. Selectors 🎯
 
-*   **シンプルが一番！**
-    *   `#sidebar #main-nav ul li a`みたいに、長くて具体的なセレクタは避けようね。HTMLの構造にガチガチに依存しちゃうと、ちょっとHTMLを変えただけでCSSが壊れちゃうこともあるんだ。😱
-    *   できるだけ短く、クラス名（`.button`とか）を中心にスタイルを当てるのがおすすめだよ！
-*   **IDセレクタは慎重に！**
-    *   IDセレクタ（`#header`とか）は、すごく強い力を持ってるから、他のスタイルを上書きするのが大変になっちゃうんだ。JavaScriptで何かを動かすとき以外は、スタイルのために使いすぎないようにしようね。
-*   **いらない部分は書かない！**
-    *   `body .container .classname li`って書かなくても、`.classname li`だけで十分なことが多いよ。シンプルにね！✨
-*   **詳細度を理解しよう！**
-    *   「なんでこのスタイルが効かないんだろう？」って思ったら、セレクタの「詳細度」が原因かも！どのスタイルが優先されるかのルールを理解しておくと、悩まなくて済むよ。🤔
+*   **Simple is best!**
+    *   Avoid long, specific selectors like `#sidebar #main-nav ul li a`. Tight coupling to HTML structure can break CSS with minor HTML changes. 😱
+    *   Keep selectors short and focus on class names (like `.button`) for styling!
+*   **Use ID selectors carefully!**
+    *   ID selectors (like `#header`) have strong specificity, making it difficult to override other styles. Avoid overusing them for styling except when needed for JavaScript functionality.
+*   **Don't write unnecessary parts!**
+    *   Instead of `body .container .classname li`, often `.classname li` is sufficient. Keep it simple! ✨
+*   **Understand specificity!**
+    *   When wondering "Why isn't this style working?", selector "specificity" might be the cause! Understanding the rules for which styles take priority saves you from confusion. 🤔
 
-## 4. 命名規則 🏷️
+## 4. Naming Conventions 🏷️
 
-*   **名前のつけ方も統一！**
-    *   BEM（Block, Element, Modifier）とか、SMACSSみたいな命名規則を使うと、クラス名を見ただけで「これはどんな役割の部品かな？」って分かりやすくなるんだ。チームで決めたルールに従って、分かりやすい名前をつけようね！
-*   **小文字とハイフンで！**
-    *   クラス名やID名は、全部小文字で書いて、単語と単語の間はハイフン（`-`）でつなぐのが一般的だよ。アンダースコア（`_`）は使わないようにしようね。
+*   **Unify naming approaches!**
+    *   Using naming conventions like BEM (Block, Element, Modifier) or SMACSS makes it easy to understand "What role does this component play?" just by looking at class names. Follow team-agreed rules for clear naming!
+*   **Use lowercase and hyphens!**
+    *   Write class names and ID names in all lowercase, connecting words with hyphens (`-`). Avoid using underscores (`_`).
 
-## 5. プロパティと値 🌈
+## 5. Properties and Values 🌈
 
-*   **書く順番もルール決め！**
-    *   CSSのプロパティ（`width`とか`height`とか`color`とか）は、書く順番を統一すると、後から探しやすいし、コードも読みやすくなるよ。アルファベット順とか、レイアウトに関するものから書くとか、チームで決めてみてね！
-*   **ショートハンドを賢く使おう！**
-    *   `margin`とか`padding`、`font`、`background`、`border`なんかは、まとめて書ける「ショートハンドプロパティ」を使うと、コードの量が減らせるよ！ただし、一部だけ変えたいときは、個別に書くのもOK！
-*   **単位は忘れずに！**
-    *   `0`のときは単位（`0px`とか）を省略しても大丈夫だけど、それ以外はちゃんと単位をつけようね。
-*   **色の指定も統一！**
-    *   `#RRGGBB`とか`rgb()`とか、色の書き方もプロジェクトで統一しようね。短い`#RGB`形式が使えるなら、それを使うとコードがスッキリするよ！
-*   **`!important`は最終手段！**
-    *   `!important`は、どんなスタイルよりも優先されちゃう魔法の言葉なんだけど、使いすぎると後からスタイルを修正するのがめちゃくちゃ大変になるから、本当に困ったとき以外は使わないようにしようね！🙅‍♀️
+*   **Establish property order rules!**
+    *   Unifying the order of CSS properties (like `width`, `height`, `color`) makes them easier to find later and improves code readability. Try alphabetical order or layout-related properties first - decide as a team!
+*   **Use shorthand properties wisely!**
+    *   Properties like `margin`, `padding`, `font`, `background`, `border` can be written together using "shorthand properties" to reduce code volume! However, when you only want to change part of it, writing individually is fine too!
+*   **Don't forget units!**
+    *   For `0` values, you can omit units (like `0px`), but always include units for other values.
+*   **Unify color specifications!**
+    *   Unify color writing methods like `#RRGGBB` or `rgb()` across the project. If you can use the short `#RGB` format, it keeps code cleaner!
+*   **`!important` is a last resort!**
+    *   `!important` is a magic word that overrides any style, but overusing it makes later style modifications extremely difficult, so avoid it except when truly necessary! 🙅‍♀️
 
-## 6. コメント 💬
+## 6. Comments 💬
 
-*   **分かりにくいところはコメントを！**
-    *   ちょっと複雑なCSSとか、なんでこう書いたのか理由があるところには、コメントを残しておくと、後から自分や他の人が見たときに「なるほど！」ってなるよ。
-    *   セクションごとに「ここからヘッダーのスタイルだよ！」みたいに区切りコメントを入れると、全体像が掴みやすくなるね。
-    *   でも、誰が見ても分かるような簡単なコードには、コメントは必要ないよ。シンプルにね！
-*   **コメントの書き方も統一！**
-    *   複数行のコメントの書き方とかも、チームで統一しておくと、見た目がキレイになるよ。
+*   **Comment unclear sections!**
+    *   For complex CSS or code written for specific reasons, leaving comments helps you and others understand "Ah, I see!" when reviewing later.
+    *   Adding section divider comments like "Header styles start here!" makes the overall structure easier to grasp.
+    *   However, simple code that anyone can understand doesn't need comments. Keep it simple!
+*   **Unify comment writing styles!**
+    *   Standardizing multi-line comment formatting across the team makes the appearance cleaner.
 
     ```css
     /* ==========================================================================
        Header ✨
        ========================================================================== */
     .header {
-        /* ここにヘッダーのスタイルを書くよ！ */
+        /* Header styles go here! */
     }
 
-    /* Jun、見て！このスタイルは特別な理由で必要なんだよ！ */
+    /* Note: This style is needed for a special reason! */
     .special-case {
-        color: red; /* 緊急だから赤色にしたよ！🚨 */
+        color: red; /* Made red for urgency! 🚨 */
     }
     ```
 
-## 7. メディアクエリ 📱💻
+## 7. Media Queries 📱💻
 
-*   **スマホから？PCから？**
-    *   レスポンシブデザイン（スマホでもPCでも見やすいデザイン）を作るときは、「モバイルファースト」（スマホからデザインする）か「デスクトップファースト」（PCからデザインする）か、どっちのアプローチでいくか決めようね。
-*   **ブレイクポイントは柔軟に！**
-    *   「この画面幅になったらレイアウトを変えよう！」っていうポイント（ブレイクポイント）は、特定のデバイスのサイズに合わせるんじゃなくて、コンテンツが崩れちゃうところとか、レイアウトを変えたいところに設定するのがいいよ。
-*   **メディアクエリの場所も統一！**
-    *   関連するコンポーネントのすぐ下に書くか、CSSファイルの最後にまとめて書くか、ルールを決めておこうね。Sassみたいなツールを使うと、コンポーネントごとに書くのが楽になるよ！
-*   **メディアクエリの中身もインデント！**
+*   **Mobile first or desktop first?**
+    *   When creating responsive design (designs that look good on both mobile and PC), decide whether to take a "mobile-first" (design from mobile) or "desktop-first" (design from PC) approach.
+*   **Flexible breakpoints!**
+    *   Breakpoints ("change layout at this screen width") should be set where content breaks or where you want to change layout, rather than matching specific device sizes.
+*   **Unify media query placement!**
+    *   Decide whether to write them immediately after related components or gather them at the end of CSS files. Using tools like Sass makes writing per-component easier!
+*   **Indent media query contents too!**
 
-## 8. パフォーマンスと保守性 ⚡️
+## 8. Performance and Maintainability ⚡️
 
-*   **いらないCSSは消しちゃおう！**
-    *   使ってないスタイルとか、同じようなスタイルが重複してるところは、定期的に見直して削除しようね。コードが軽くなるよ！
-*   **CSSファイルを小さくしよう！**
-    *   ウェブサイトを公開するときは、CSSファイルを圧縮（minify）すると、ファイルサイズが小さくなって、ページの読み込みが速くなるんだ！🚀
-*   **便利なツールを使ってみよう！**
-    *   SassとかLess、PostCSSみたいな「CSSプリプロセッサ」や「ポストプロセッサ」を使うと、変数を使えたり、スタイルをまとめて書けたりして、CSSを書くのがもっと効率的になるよ！
-*   **ネストしすぎは注意！**
-    *   特にプリプロセッサを使うときに、スタイルを深くネストしすぎると、出力されるCSSが長くなっちゃうことがあるから、気をつけようね。
+*   **Remove unnecessary CSS!**
+    *   Regularly review and remove unused styles and duplicate styles. This makes code lighter!
+*   **Make CSS files smaller!**
+    *   When publishing websites, compressing (minifying) CSS files reduces file size and speeds up page loading! 🚀
+*   **Try useful tools!**
+    *   Using "CSS preprocessors" or "post-processors" like Sass, Less, or PostCSS lets you use variables and write styles more efficiently, making CSS writing more productive!
+*   **Watch out for excessive nesting!**
+    *   Especially when using preprocessors, deeply nesting styles can make output CSS longer, so be careful.
 
-## 9. その他 💡
+## 9. Other Considerations 💡
 
-*   **ベンダープレフィックスは自動で！**
-    *   `-webkit-`とか`-moz-`みたいな「ベンダープレフィックス」は、Autoprefixerみたいなツールを使うと、自動でつけてくれるから便利だよ！手動でやるのは大変だからね。
-*   **CSSバリデーターを使ってみよう！**
-    *   W3C CSS Validation Serviceみたいなツールで、自分の書いたCSSに間違いがないかチェックしてみよう！エラーがないか確認できるよ。
-*   **みんなに優しいデザインを！**
-    *   色のコントラストをしっかりつけたり、キーボードで操作したときにどこが選択されているか分かりやすくしたり、アクセシビリティ（使いやすさ）にも配慮したスタイルを心がけようね。
+*   **Automate vendor prefixes!**
+    *   "Vendor prefixes" like `-webkit-` or `-moz-` can be automatically added using tools like Autoprefixer - very convenient! Manual work is tedious.
+*   **Try CSS validators!**
+    *   Use tools like W3C CSS Validation Service to check your CSS for errors! You can verify there are no issues.
+*   **Design for everyone!**
+    *   Ensure good color contrast, make keyboard navigation clear, and consider accessibility (usability) in your styling.
 
-これらのベストプラクティスは、CSSコードをもっと良くするためのヒントだよ！プロジェクトの規模や、チームのやり方、使ってる技術に合わせて、柔軟に取り入れてみてね。一番大事なのは、みんなで同じルールを守って、一貫性のあるコードを書くことだよ！😊
+These best practices are tips for improving your CSS code! Flexibly adopt them based on project scale, team methods, and technologies used. Most importantly, follow the same rules as a team and write consistent code! 😊

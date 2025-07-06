@@ -1,10 +1,11 @@
 ---
 title: "GitHub Workflow and Branch Management"
-description: "GitHub Actionsのワークフローにおけるツール実行パスの指定や、CI/CD環境での一貫した実行を保証するためのルールをまとめたよ！"
+description: "Rules for GitHub workflow and branch management, specifying tool execution paths in GitHub Actions workflows and ensuring consistent execution in CI/CD environments!"
 author: "Reco"
+version: "1.0"
 date: "2025-06-03"
-tag: ["GitHub", "CI/CD", "ベストプラクティス", "ワークフロー", "ブランチ管理"]
-globs: *
+tags: ["GitHub", "CI/CD", "best-practices", "ベストプラクティス", "workflow", "ワークフロー", "branch-management", "ブランチ管理"]
+globs: ["*"]
 ---
 
 # GitHub Workflow and Branch Management
@@ -31,7 +32,7 @@ graph TD
 *   **`main` Branch**:
     *   **Purpose**: Represents the production-ready code.
     *   **Rule**: Must always be stable and deployable.
-    *   **Restriction**: **Direct commits to `main` は禁止です。**
+    *   **Restriction**: **Direct commits to `main` are prohibited.**
 *   **`feature/*` or `fix/*` Branches**:
     *   **Purpose**: Isolate work for new features (e.g., `feature/add-user-authentication`) or bug fixes (e.g., `fix/resolve-login-issue`).
     *   **Creation**: Branched from the `main` branch.
