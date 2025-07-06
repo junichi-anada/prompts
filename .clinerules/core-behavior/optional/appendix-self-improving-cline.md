@@ -1,8 +1,11 @@
 ---
-description: Appendix proposing improvements to self-improving-cline.md regarding fork management context awareness.
-author: Jun-san
-version: 1.0
+title: "Appendix for self-improving-cline.md"
+description: "Appendix proposing improvements to self-improving-cline.md regarding fork management context awareness."
+author: "Jun-san"
+version: "1.0"
+date: "2025-06-03"
 tags: ["appendix", "付録", "suggestion", "提案", "fork-management", "フォーク管理", "self-improvement", "自己改善", "meta", "メタ", "clinerules", "クラインルール"]
+globs: ["*"]
 ---
 # Appendix for self-improving-cline.md
 

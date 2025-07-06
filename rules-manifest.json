@@ -379,7 +379,7 @@
 				"core-behavior",
 				"コア動作"
 			],
-			"author": "https://github.com/nickbaumann98"
+			"author": "nickbaumann98"
 		},
 		{
 			"path": ".clinerules/core-behavior/MCP/sequential-thinking.md",
@@ -505,15 +505,18 @@
 		{
 			"path": ".clinerules/tool/docker/docker-coding-guidelines.md",
 			"version": "1.0",
-			"description": "Best practices for Docker summarized! Use this reference to create more efficient and secure Docker images! 🚀",
+			"description": "Dockerのベストプラクティスについてまとめたよ！これを参考に、もっと効率的で安全なDockerイメージを作れるようになるはずだよ！🚀",
 			"tags": [
 				"Docker",
-				"best-practices",
 				"ベストプラクティス",
-				"container",
 				"コンテナ",
 				"Dockerfile",
-				"CI/CD"
+				"CI/CD",
+				"docker",
+				"best-practices",
+				"container",
+				"coding-standards",
+				"コーディング規約"
 			],
 			"author": "Reco"
 		},
@@ -582,6 +585,40 @@
 				"troubleshooting"
 			],
 			"author": "Reco & Jun"
+		},
+		{
+			"path": ".clinerules/tool/Git/git-output-handling.md",
+			"version": "1.0",
+			"description": "Troubleshooting Git Command Output Capture Issues",
+			"tags": [
+				"git",
+				"troubleshooting",
+				"terminal",
+				"tool",
+				"Git",
+				"トラブルシューティング",
+				"ターミナル",
+				"ツール"
+			],
+			"author": "Reco & Jun"
+		},
+		{
+			"path": ".clinerules/coding/php-troubleshooting.md",
+			"version": "1.0",
+			"description": "PHP Troubleshooting Guide",
+			"tags": [
+				"PHP",
+				"トラブルシューティング",
+				"Composer",
+				"デバッグ",
+				"php",
+				"troubleshooting",
+				"composer",
+				"debugging",
+				"best-practices",
+				"ベストプラクティス"
+			],
+			"author": "Reco"
 		}
 	]
 }

@@ -36,7 +36,7 @@ Essential rules for creating web pages with HTML5 - keep your code clean, make i
 *   **Use `<div>` and `<span>` only when no other suitable tag exists!**
     *   These are "generic containers," so use semantic tags when you want to convey meaning.
 
-#### 4. Tips for Writing Clean Code 🧹
+#### 4. Tips for Writing Clean Code 🧼
 
 *   **Keep indentation consistent!**
     *   Decide as a team whether to use 2 or 4 spaces, or tabs, for consistent, readable code.

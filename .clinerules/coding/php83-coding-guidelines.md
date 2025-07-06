@@ -29,7 +29,7 @@ The foundation of PHP coding standards is the PSR (PHP Standard Recommendations)
 *   **Use 4 spaces for indentation! Don't use tabs!** This keeps code formatting consistent.
 *   **Write keywords and types in lowercase!** Use short forms like `bool` instead of `boolean`, `int` instead of `integer`.
 
-### 4. Namespace and Use Statement Organization! 🧹
+### 4. Namespace and Use Statement Organization! 🧼
 
 *   File header should follow this order: `<?php` tag, file-level DocBlock, `declare` statement, `namespace` declaration, `use` statements.
 *   Group `use` statements by type: classes, functions, constants - without blank lines between statements in each group.
