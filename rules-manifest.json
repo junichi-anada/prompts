@@ -576,20 +576,21 @@
 		},
 		{
 			"path": ".clinerules/tool/mcp/obsidian-troubleshooting.md",
-			"version": "1.0",
-			"description": "Obsidian MCPサーバー利用時のトラブルシューティングガイド",
+			"version": "1.1",
+			"description": "Troubleshooting guide for Obsidian MCP server usage",
 			"tags": [
 				"mcp",
 				"server",
 				"obsidian",
-				"troubleshooting"
+				"troubleshooting",
+				"トラブルシューティング"
 			],
 			"author": "Reco & Jun"
 		},
 		{
 			"path": ".clinerules/tool/Git/git-output-handling.md",
 			"version": "1.0",
-			"description": "Troubleshooting Git Command Output Capture Issues",
+			"description": "Gitコマンドの出力がキャプチャできない場合の対処法",
 			"tags": [
 				"git",
 				"troubleshooting",
@@ -605,7 +606,7 @@
 		{
 			"path": ".clinerules/coding/php-troubleshooting.md",
 			"version": "1.0",
-			"description": "PHP Troubleshooting Guide",
+			"description": "PHPプロジェクトでよくある問題の解決策をまとめたよ！",
 			"tags": [
 				"PHP",
 				"トラブルシューティング",

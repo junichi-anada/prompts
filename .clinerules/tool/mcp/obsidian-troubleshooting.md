@@ -1,27 +1,39 @@
 ---
-description: "Obsidian MCPサーバー利用時のトラブルシューティングガイド"
+description: "Troubleshooting guide for Obsidian MCP server usage"
 author: "Reco & Jun"
-version: "1.0"
-tags: ["mcp", "server", "obsidian", "troubleshooting"]
+version: "1.1"
+tags: ["mcp", "server", "obsidian", "troubleshooting", "トラブルシューティング"]
 globs: ["*"]
 ---
-# Obsidian MCPサーバー トラブルシューティング
+# Obsidian MCP Server Troubleshooting
 
-## `obsidian_patch_content` が `invalid-target` で失敗する場合
+## Effective Usage of `obsidian_patch_content`
 
-`patch`（部分的な書き換え）がうまくいかない場合、無理に原因を追求するより、代替手段を使うのが早いことが多いよ！
+### When Failing with `invalid-target`
 
--   **代替手段**: `obsidian_put_content` を使って、ファイル全体をまるごと上書きする。
--   **手順**:
-    1.  `obsidian_get_file_contents` で現在のファイル内容を正確に取得する。
-    2.  取得した内容を元に、修正したい箇所だけ変更した新しいコンテンツを作る。
-    3.  `obsidian_put_content` で、新しいコンテンツをファイルに書き込む。
+When `patch` (partial rewriting) doesn't work well, it's often faster to use alternative methods rather than struggling to find the cause!
 
-## `obsidian_list_files_in_dir` が `Not Found` を返す場合
+-   **Alternative Method**: Use `obsidian_put_content` to overwrite the entire file.
+-   **Steps**:
+    1.  Get the current file content accurately with `obsidian_get_file_contents`.
+    2.  Create new content based on the retrieved content, changing only the parts you want to modify.
+    3.  Write the new content to the file with `obsidian_put_content`.
 
-指定したディレクトリが存在するはずなのに `Not Found` エラーが出る場合、そのディレクトリが空っぽの可能性があるよ。
+### Reliable Line Editing Using Block IDs
 
--   **原因**: ObsidianのAPIは、空のディレクトリを「存在しない」ものとして扱うことがある。
--   **対処法**:
-    -   慌てずに、そのディレクトリにファイルを作成する処理（例: `obsidian_put_content`）を実行してみる。
-    -   ファイルが作成されれば、ディレクトリも自動的に認識されるようになるはずだよ！
+Using `target_type: "block"` allows you to edit specific lines with pinpoint accuracy - super convenient!
+
+-   **How to Use**:
+    1.  Beforehand, add a unique ID at the end of the line you want to edit in the format `^blockID`.
+    2.  When calling `obsidian_patch_content`, specify `"block"` for `target_type`.
+    3.  For `target`, specify the block ID string **without** the `^` (e.g., `"blockID"`).
+-   **Key Point**: With this method, you can accurately target and edit lines with IDs even if other parts of the file change, making it super stable! 👍
+
+## When `obsidian_list_files_in_dir` Returns `Not Found`
+
+If you get a `Not Found` error even though the specified directory should exist, the directory might be empty.
+
+-   **Cause**: Obsidian's API sometimes treats empty directories as "non-existent".
+-   **Solution**:
+    -   Don't panic - try executing a process to create a file in that directory (e.g., `obsidian_put_content`).
+    -   Once a file is created, the directory should be automatically recognized!
