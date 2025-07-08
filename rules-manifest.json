@@ -620,6 +620,49 @@
 				"ベストプラクティス"
 			],
 			"author": "Reco"
+		},
+		{
+			"path": ".clinerules/core-behavior/custom-instructions.md",
+			"version": "1.0",
+			"description": "Defines custom instructions for Gemini to improve response accuracy, select appropriate expressions, reinforce information, handle errors, optimize outlines, respond flexibly, maximize context window utilization, specify and break down tasks, unify language, avoid misinformation, provide independent opinions, and introduce a feedback loop.",
+			"tags": [
+				"custom-instructions",
+				"gemini",
+				"core-behavior"
+			],
+			"author": "かずゆき"
+		},
+		{
+			"path": ".clinerules/tool/Ai-memory-management.md",
+			"version": "1.0",
+			"description": "A prompt for registering information in the AI agent's long-term memory system, OpenMemory, in multiple languages. It converts diverse Japanese information into concise and essential English memories for high-precision search.",
+			"tags": [
+				"ai",
+				"memory-management",
+				"open-memory"
+			],
+			"author": "かずゆき"
+		},
+		{
+			"path": ".clinerules/tool/mcp/mcp-server-setup-guidelines.md",
+			"version": "1.0",
+			"description": "This document outlines the server environment setup and operational guidelines for the MCP (Model Compliance Protocol) server.",
+			"tags": [
+				"mcp",
+				"server-setup",
+				"guidelines"
+			],
+			"author": "かずゆき"
+		},
+		{
+			"path": ".clinerules/tool/GitHub/github-trouble-shooting.md",
+			"version": "1.0",
+			"description": "A troubleshooting guide for GitHub issues.",
+			"tags": [
+				"github",
+				"troubleshooting"
+			],
+			"author": "かずゆき"
 		}
 	]
 }
