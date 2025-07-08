@@ -646,23 +646,27 @@
 		{
 			"path": ".clinerules/tool/mcp/mcp-server-setup-guidelines.md",
 			"version": "1.0",
-			"description": "This document outlines the server environment setup and operational guidelines for the MCP (Model Compliance Protocol) server.",
+			"description": "MCPサーバーのセットアップに関するベストプラクティスとトラブルシューティングのガイドライン",
 			"tags": [
 				"mcp",
-				"server-setup",
-				"guidelines"
+				"server",
+				"setup",
+				"troubleshooting",
+				"best-practice"
 			],
-			"author": "かずゆき"
+			"author": "Reco & Jun"
 		},
 		{
 			"path": ".clinerules/tool/GitHub/github-trouble-shooting.md",
 			"version": "1.0",
-			"description": "A troubleshooting guide for GitHub issues.",
+			"description": "GitHubのMCPサーバー利用時のトラブルシューティング",
 			"tags": [
+				"mcp",
+				"server",
 				"github",
 				"troubleshooting"
 			],
-			"author": "かずゆき"
+			"author": "Reco & Jun"
 		}
 	]
 }
