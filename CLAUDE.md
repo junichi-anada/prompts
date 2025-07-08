@@ -8,6 +8,19 @@ This is a fork of the `cline/prompts` repository that serves as a centralized so
 
 ## Common Development Commands
 
+### Rule Maintenance and Validation
+```bash
+# Update the rules manifest to sync with actual files
+./scripts/update-manifest.sh
+
+# Validate all rules for consistency and broken links
+./scripts/validate-rules.sh
+
+# Setup automated manifest updates (choose one)
+./scripts/setup-cron.sh          # For cron-based systems
+./scripts/setup-systemd-timer.sh  # For systemd-based Linux
+```
+
 ### Syncing with Upstream
 ```bash
 # Add upstream remote (if not already added)
@@ -45,7 +58,7 @@ curl -o /path/to/project/.clinerules/[rule-file].md \
   - `role/` - Role-specific rules (IT trainer, waterfall documenter, etc.)
   - `tool/` - Tool-specific guidelines (Docker, GitHub Actions, etc.)
   - `workflows/` - Workflow definitions (ACT mode, PLAN mode, etc.)
-- `memory-bank/` - Training materials and learning logs
+- `scripts/` - Automation and maintenance scripts
 - `rules-manifest.json` - Central registry of all rules with metadata
 
 ### Rule File Structure
@@ -61,14 +74,16 @@ All rule files follow this pattern:
 1. Use PLAN mode to confirm requirements
 2. Create the .md file with proper frontmatter
 3. Update `rules-manifest.json` with the new rule entry
-4. Commit to a feature branch
+4. Run `./scripts/validate-rules.sh` to verify consistency
+5. Commit to a feature branch
 
 #### Updating Existing Rules
 1. Create feature branch from `my-rules`
 2. Update the rule file(s)
 3. Update version in both the rule's frontmatter and `rules-manifest.json`
-4. Create PR to `my-rules` branch (not `main`)
-5. Use conventional commit format: `feat(rules): [description in Japanese/English]`
+4. Run `./scripts/update-manifest.sh` to ensure manifest is in sync
+5. Create PR to `my-rules` branch (not `main`)
+6. Use conventional commit format: `feat(rules): [description in Japanese/English]`
 
 ### Important Conventions
 - File naming: Use kebab-case (e.g., `javascript-coding-guidelines.md`)
@@ -77,6 +92,11 @@ All rule files follow this pattern:
 - Use clear, directive language in rules
 - Provide concrete examples and code snippets
 - Test rules in actual projects before committing
+
+### Branch Management
+- **main**: Syncs with upstream repository - do NOT commit custom rules here
+- **my-rules**: All custom rules and modifications go here
+- Feature branches: Create from `my-rules` for new rules or updates
 
 ### Key Files to Reference
 - `.clinerules/workflows/create-clinerule.md` - Template for creating new rules
