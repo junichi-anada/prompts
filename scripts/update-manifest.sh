@@ -6,7 +6,7 @@
 # 1. Scans all .clinerules/*.md files
 # 2. Extracts metadata from YAML frontmatter
 # 3. Updates or adds entries in rules-manifest.json
-# 4. Preserves existing entries not found in file system
+# 4. Deletes entries for which files are not found in the file system (syncs the manifest with the file system)
 # 5. Creates backup before updating
 
 # Colors for output
@@ -118,22 +118,16 @@ fi
 cat > /tmp/update_manifest.py << 'EOF'
 import json
 import sys
-import os
 
 def main():
     manifest_file = sys.argv[1]
     
-    # Load existing manifest
+    # Load existing manifest to preserve top-level fields like 'version'
     with open(manifest_file, 'r', encoding='utf-8') as f:
         manifest = json.load(f)
     
-    # Create a map of existing rules by path
-    existing_rules = {rule['path']: rule for rule in manifest.get('rules', [])}
-    
-    # Track which rules were found
-    found_paths = set()
-    
-    # Read new/updated rules from stdin
+    # Read all new/updated rules from stdin
+    new_rules = []
     for line in sys.stdin:
         line = line.strip()
         if not line:
@@ -141,44 +135,25 @@ def main():
         
         try:
             rule_data = json.loads(line)
-            path = rule_data['path']
-            found_paths.add(path)
-            
-            if path in existing_rules:
-                # Update existing rule
-                existing_rules[path].update(rule_data)
-                print(f"Updated: {path}")
-            else:
-                # Add new rule
-                existing_rules[path] = rule_data
-                print(f"Added: {path}")
+            new_rules.append(rule_data)
         except json.JSONDecodeError as e:
             print(f"Error parsing rule data: {e}", file=sys.stderr)
             continue
     
-    # Rebuild rules array maintaining order
-    rules = []
+    # Sort rules by path for consistency
+    new_rules.sort(key=lambda r: r['path'])
     
-    # First, add all existing rules (updated or not)
-    for rule in manifest.get('rules', []):
-        path = rule['path']
-        if path in existing_rules:
-            rules.append(existing_rules[path])
+    # Replace the rules in the manifest
+    manifest['rules'] = new_rules
     
-    # Then, add any new rules
-    for path, rule in existing_rules.items():
-        if not any(r['path'] == path for r in manifest.get('rules', [])):
-            rules.append(rule)
-    
-    # Update manifest
-    manifest['rules'] = rules
-    
-    # Write updated manifest
+    # Write the completely updated manifest
     with open(manifest_file, 'w', encoding='utf-8') as f:
         json.dump(manifest, f, indent='\t', ensure_ascii=False)
     
     # Print summary
-    print(f"\nTotal rules in manifest: {len(rules)}")
+    print(f"\nManifest updated successfully.")
+    print(f"Total rules in manifest: {len(new_rules)}")
+
 
 if __name__ == '__main__':
     main()

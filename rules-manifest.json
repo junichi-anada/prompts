@@ -41,71 +41,6 @@
 			"author": "https://github.com/turiddu25"
 		},
 		{
-			"path": ".clinerules/comprehensive-slide-dev-guide.md",
-			"version": "1.0",
-			"description": "A comprehensive guide to crafting high-quality advanced presentations using Slidev, covering advanced syntax, visuals, interactivity, customization, and deployment.",
-			"tags": [
-				"slidev",
-				"guide",
-				"advanced",
-				"presentation",
-				"development"
-			],
-			"author": "Cline"
-		},
-		{
-			"path": ".clinerules/gemini-comprehensive-software-engineering-guide.md",
-			"version": "1.0",
-			"description": "A comprehensive guide to software engineering best practices, covering architecture, debugging, development processes, code quality, collaboration, security, and reliability.",
-			"tags": [
-				"software-engineering",
-				"gemini",
-				"architecture",
-				"development-guide",
-				"code-quality",
-				"security",
-				"reliability"
-			],
-			"author": "https://github.com/NightTrek"
-		},
-		{
-			"path": ".clinerules/mcp-development-protocol.md",
-			"version": "1.0",
-			"description": "Defines the protocol and steps for developing MCP (Model Context Protocol) servers.",
-			"tags": [
-				"mcp",
-				"development",
-				"protocol",
-				"server",
-				"integration"
-			],
-			"author": "https://github.com/nickbaumann98"
-		},
-		{
-			"path": ".clinerules/new-task-automation.md",
-			"version": "1.0",
-			"description": "Workflow for starting new task when context window reaches 50%",
-			"tags": [
-				"context-management",
-				"new-task"
-			],
-			"author": "https://github.com/cline"
-		},
-		{
-			"path": ".clinerules/next-js-supabase.md",
-			"version": "1.0",
-			"description": "Guidelines for writing Next.js apps with Supabase Auth",
-			"tags": [
-				"nextjs",
-				"supabase",
-				"auth",
-				"ssr",
-				"guide",
-				"best-practices"
-			],
-			"author": "https://github.com/nickbaumann98"
-		},
-		{
 			"path": ".clinerules/coding/c#-guide.md",
 			"version": "1.0",
 			"description": "A comprehensive guide to mastering C# for developers with Python and TypeScript backgrounds.",
@@ -135,6 +70,54 @@
 				"ベストプラクティス",
 				"ウェブ開発",
 				"スタイルシート"
+			],
+			"author": "Reco"
+		},
+		{
+			"path": ".clinerules/coding/framework/laravel-testing-guidelines.md",
+			"version": "1.0",
+			"description": "Common issues and solutions when running PHPUnit tests in Laravel projects, especially database-related problems!",
+			"tags": [
+				"Laravel",
+				"Testing",
+				"PHPUnit",
+				"Database",
+				"SQLite",
+				"テスティング",
+				"データベース"
+			],
+			"author": "Reco"
+		},
+		{
+			"path": ".clinerules/coding/framework/laravel11-coding-guidelines.md",
+			"version": "1.0",
+			"description": "Best practices for Laravel 11 coding standards! From PSR-12 compliant standards to MVC components and testing, this guide is packed with tips to improve the quality of Laravel development!",
+			"tags": [
+				"Laravel",
+				"Laravel11",
+				"coding-standards",
+				"コーディング規約",
+				"best-practices",
+				"ベストプラクティス",
+				"PHP",
+				"PSR-12"
+			],
+			"author": "Reco"
+		},
+		{
+			"path": ".clinerules/coding/framework/laravel12-coding-guidelines.md",
+			"version": "1.0",
+			"description": "Guide to automatic PHP code formatting with Laravel Pint, recommended coding styles for Laravel projects, relationship with PSR-12, customization methods, and CI/CD integration!",
+			"tags": [
+				"Laravel",
+				"Laravel12",
+				"LaravelPint",
+				"coding-standards",
+				"best-practices",
+				"PHP",
+				"PSR-12",
+				"コーディング規約",
+				"ベストプラクティス"
 			],
 			"author": "Reco"
 		},
@@ -171,18 +154,20 @@
 			"author": "Reco"
 		},
 		{
-			"path": ".clinerules/coding/laravel11-coding-guidelines.md",
+			"path": ".clinerules/coding/php-troubleshooting.md",
 			"version": "1.0",
-			"description": "Best practices for Laravel 11 coding standards! From PSR-12 compliant standards to MVC components and testing, this guide is packed with tips to improve the quality of Laravel development!",
+			"description": "PHPプロジェクトでよくある問題の解決策をまとめたよ！",
 			"tags": [
-				"Laravel",
-				"Laravel11",
-				"coding-standards",
-				"コーディング規約",
-				"best-practices",
-				"ベストプラクティス",
 				"PHP",
-				"PSR-12"
+				"トラブルシューティング",
+				"Composer",
+				"デバッグ",
+				"php",
+				"troubleshooting",
+				"composer",
+				"debugging",
+				"best-practices",
+				"ベストプラクティス"
 			],
 			"author": "Reco"
 		},
@@ -232,52 +217,34 @@
 			"author": "Cline"
 		},
 		{
-			"path": ".clinerules/coding/framework/laravel-testing-guidelines.md",
+			"path": ".clinerules/comprehensive-slide-dev-guide.md",
 			"version": "1.0",
-			"description": "Common issues and solutions when running PHPUnit tests in Laravel projects, especially database-related problems!",
+			"description": "A comprehensive guide to crafting high-quality advanced presentations using Slidev, covering advanced syntax, visuals, interactivity, customization, and deployment.",
 			"tags": [
-				"Laravel",
-				"Testing",
-				"PHPUnit",
-				"Database",
-				"SQLite",
-				"テスティング",
-				"データベース"
+				"slidev",
+				"guide",
+				"advanced",
+				"presentation",
+				"development"
 			],
-			"author": "Reco"
+			"author": "Cline"
 		},
 		{
-			"path": ".clinerules/coding/framework/laravel11-coding-guidelines.md",
+			"path": ".clinerules/core-behavior/MCP/sequential-thinking.md",
 			"version": "1.0",
-			"description": "Best practices for Laravel 11 coding standards! From PSR-12 compliant standards to MVC components and testing, this guide is packed with tips to improve the quality of Laravel development!",
+			"description": "A guide for effectively using the sequentialthinking MCP tool for dynamic and reflective problem-solving.",
 			"tags": [
-				"Laravel",
-				"Laravel11",
-				"coding-standards",
-				"コーディング規約",
-				"best-practices",
-				"ベストプラクティス",
-				"PHP",
-				"PSR-12"
+				"mcp",
+				"sequentialthinking",
+				"逐次思考",
+				"problem-solving",
+				"問題解決",
+				"workflow-guide",
+				"ワークフローガイド",
+				"ai-guidance",
+				"AIガイダンス"
 			],
-			"author": "Reco"
-		},
-		{
-			"path": ".clinerules/coding/framework/laravel12-coding-guidelines.md",
-			"version": "1.0",
-			"description": "Guide to automatic PHP code formatting with Laravel Pint, recommended coding styles for Laravel projects, relationship with PSR-12, customization methods, and CI/CD integration!",
-			"tags": [
-				"Laravel",
-				"Laravel12",
-				"LaravelPint",
-				"coding-standards",
-				"best-practices",
-				"PHP",
-				"PSR-12",
-				"コーディング規約",
-				"ベストプラクティス"
-			],
-			"author": "Reco"
+			"author": "https://github.com/rafaelkallis"
 		},
 		{
 			"path": ".clinerules/core-behavior/cline-architecture.md",
@@ -334,6 +301,17 @@
 			"author": "https://github.com/jeanibarz"
 		},
 		{
+			"path": ".clinerules/core-behavior/custom-instructions.md",
+			"version": "1.0",
+			"description": "Defines custom instructions for Gemini to improve response accuracy, select appropriate expressions, reinforce information, handle errors, optimize outlines, respond flexibly, maximize context window utilization, specify and break down tasks, unify language, avoid misinformation, provide independent opinions, and introduce a feedback loop.",
+			"tags": [
+				"custom-instructions",
+				"gemini",
+				"core-behavior"
+			],
+			"author": "かずゆき"
+		},
+		{
 			"path": ".clinerules/core-behavior/memory-bank.md",
 			"version": "1.0",
 			"description": "Describes Cline's Memory Bank system, its structure, and workflows for maintaining project knowledge across sessions.",
@@ -348,55 +326,6 @@
 				"ドキュメントプロトコル"
 			],
 			"author": "https://github.com/nickbaumann98"
-		},
-		{
-			"path": ".clinerules/core-behavior/proactive-format-checking.md",
-			"version": "1.0",
-			"description": "Rules for proactively checking existing file formats before creating new files to maintain consistency.",
-			"tags": [
-				"core-behavior",
-				"コア動作",
-				"consistency",
-				"一貫性",
-				"file-format",
-				"ファイル形式"
-			],
-			"author": "Reco"
-		},
-		{
-			"path": ".clinerules/core-behavior/self-improving-cline.md",
-			"version": "1.0",
-			"description": "Defines a process for Cline to reflect on interactions and suggest improvements to active .clinerules.",
-			"tags": [
-				"meta",
-				"メタ",
-				"self-improvement",
-				"自己改善",
-				"clinerules",
-				"クラインルール",
-				"reflection",
-				"リフレクション",
-				"core-behavior",
-				"コア動作"
-			],
-			"author": "nickbaumann98"
-		},
-		{
-			"path": ".clinerules/core-behavior/MCP/sequential-thinking.md",
-			"version": "1.0",
-			"description": "A guide for effectively using the sequentialthinking MCP tool for dynamic and reflective problem-solving.",
-			"tags": [
-				"mcp",
-				"sequentialthinking",
-				"逐次思考",
-				"problem-solving",
-				"問題解決",
-				"workflow-guide",
-				"ワークフローガイド",
-				"ai-guidance",
-				"AIガイダンス"
-			],
-			"author": "https://github.com/rafaelkallis"
 		},
 		{
 			"path": ".clinerules/core-behavior/optional/appendix-self-improving-cline.md",
@@ -439,6 +368,38 @@
 			"author": "Jun-san"
 		},
 		{
+			"path": ".clinerules/core-behavior/proactive-format-checking.md",
+			"version": "1.0",
+			"description": "Rules for proactively checking existing file formats before creating new files to maintain consistency.",
+			"tags": [
+				"core-behavior",
+				"コア動作",
+				"consistency",
+				"一貫性",
+				"file-format",
+				"ファイル形式"
+			],
+			"author": "Reco"
+		},
+		{
+			"path": ".clinerules/core-behavior/self-improving-cline.md",
+			"version": "1.0",
+			"description": "Defines a process for Cline to reflect on interactions and suggest improvements to active .clinerules.",
+			"tags": [
+				"meta",
+				"メタ",
+				"self-improvement",
+				"自己改善",
+				"clinerules",
+				"クラインルール",
+				"reflection",
+				"リフレクション",
+				"core-behavior",
+				"コア動作"
+			],
+			"author": "nickbaumann98"
+		},
+		{
 			"path": ".clinerules/core-behavior/writing/writing-effective-clinerules.md",
 			"version": "1.1",
 			"description": "Guidelines and best practices for creating effective .clinerules to guide Cline's behavior, knowledge, and workflows.",
@@ -475,6 +436,58 @@
 			"author": "Reco"
 		},
 		{
+			"path": ".clinerules/gemini-comprehensive-software-engineering-guide.md",
+			"version": "1.0",
+			"description": "A comprehensive guide to software engineering best practices, covering architecture, debugging, development processes, code quality, collaboration, security, and reliability.",
+			"tags": [
+				"software-engineering",
+				"gemini",
+				"architecture",
+				"development-guide",
+				"code-quality",
+				"security",
+				"reliability"
+			],
+			"author": "https://github.com/NightTrek"
+		},
+		{
+			"path": ".clinerules/mcp-development-protocol.md",
+			"version": "1.0",
+			"description": "Defines the protocol and steps for developing MCP (Model Context Protocol) servers.",
+			"tags": [
+				"mcp",
+				"development",
+				"protocol",
+				"server",
+				"integration"
+			],
+			"author": "https://github.com/nickbaumann98"
+		},
+		{
+			"path": ".clinerules/new-task-automation.md",
+			"version": "1.0",
+			"description": "Workflow for starting new task when context window reaches 50%",
+			"tags": [
+				"context-management",
+				"new-task"
+			],
+			"author": "https://github.com/cline"
+		},
+		{
+			"path": ".clinerules/next-js-supabase.md",
+			"version": "1.0",
+			"description": "Guidelines for writing Next.js apps with Supabase Auth",
+			"tags": [
+				"nextjs",
+				"supabase",
+				"auth",
+				"ssr",
+				"guide",
+				"best-practices"
+			],
+			"author": "https://github.com/nickbaumann98"
+		},
+		{
 			"path": ".clinerules/role/role-it-trainer.md",
 			"version": "1.0",
 			"description": "Rules for Cline to act as an IT training instructor. Supports curriculum planning, implementation guidelines, and creation of slide and text materials.",
@@ -503,22 +516,43 @@
 			"author": "Cline"
 		},
 		{
-			"path": ".clinerules/tool/docker/docker-coding-guidelines.md",
+			"path": ".clinerules/tool/Ai-memory-management.md",
 			"version": "1.0",
-			"description": "Dockerのベストプラクティスについてまとめたよ！これを参考に、もっと効率的で安全なDockerイメージを作れるようになるはずだよ！🚀",
+			"description": "A prompt for registering information in the AI agent's long-term memory system, OpenMemory, in multiple languages. It converts diverse Japanese information into concise and essential English memories for high-precision search.",
 			"tags": [
-				"Docker",
-				"ベストプラクティス",
-				"コンテナ",
-				"Dockerfile",
-				"CI/CD",
-				"docker",
-				"best-practices",
-				"container",
-				"coding-standards",
-				"コーディング規約"
+				"ai",
+				"memory-management",
+				"open-memory"
 			],
-			"author": "Reco"
+			"author": "かずゆき"
+		},
+		{
+			"path": ".clinerules/tool/Git/git-output-handling.md",
+			"version": "1.0",
+			"description": "Gitコマンドの出力がキャプチャできない場合の対処法",
+			"tags": [
+				"git",
+				"troubleshooting",
+				"terminal",
+				"tool",
+				"Git",
+				"トラブルシューティング",
+				"ターミナル",
+				"ツール"
+			],
+			"author": "Reco & Jun"
+		},
+		{
+			"path": ".clinerules/tool/GitHub/github-trouble-shooting.md",
+			"version": "1.0",
+			"description": "GitHubのMCPサーバー利用時のトラブルシューティング",
+			"tags": [
+				"mcp",
+				"server",
+				"github",
+				"troubleshooting"
+			],
+			"author": "Reco & Jun"
 		},
 		{
 			"path": ".clinerules/tool/GitHub/github_actions.md",
@@ -568,80 +602,22 @@
 			"author": "Cline Team"
 		},
 		{
-			"path": ".clinerules/workflows/create-clinerule.md",
+			"path": ".clinerules/tool/docker/docker-coding-guidelines.md",
 			"version": "1.0",
-			"description": "新しい.clinerulesファイルを作成し、rules-manifest.jsonに登録するまでの標準的なワークフローだよ。",
-			"tags": [],
-			"author": "Reco"
-		},
-		{
-			"path": ".clinerules/tool/mcp/obsidian-troubleshooting.md",
-			"version": "1.1",
-			"description": "Troubleshooting guide for Obsidian MCP server usage",
+			"description": "Dockerのベストプラクティスについてまとめたよ！これを参考に、もっと効率的で安全なDockerイメージを作れるようになるはずだよ！🚀",
 			"tags": [
-				"mcp",
-				"server",
-				"obsidian",
-				"troubleshooting",
-				"トラブルシューティング"
-			],
-			"author": "Reco & Jun"
-		},
-		{
-			"path": ".clinerules/tool/Git/git-output-handling.md",
-			"version": "1.0",
-			"description": "Gitコマンドの出力がキャプチャできない場合の対処法",
-			"tags": [
-				"git",
-				"troubleshooting",
-				"terminal",
-				"tool",
-				"Git",
-				"トラブルシューティング",
-				"ターミナル",
-				"ツール"
-			],
-			"author": "Reco & Jun"
-		},
-		{
-			"path": ".clinerules/coding/php-troubleshooting.md",
-			"version": "1.0",
-			"description": "PHPプロジェクトでよくある問題の解決策をまとめたよ！",
-			"tags": [
-				"PHP",
-				"トラブルシューティング",
-				"Composer",
-				"デバッグ",
-				"php",
-				"troubleshooting",
-				"composer",
-				"debugging",
+				"Docker",
+				"ベストプラクティス",
+				"コンテナ",
+				"Dockerfile",
+				"CI/CD",
+				"docker",
 				"best-practices",
-				"ベストプラクティス"
+				"container",
+				"coding-standards",
+				"コーディング規約"
 			],
 			"author": "Reco"
-		},
-		{
-			"path": ".clinerules/core-behavior/custom-instructions.md",
-			"version": "1.0",
-			"description": "Defines custom instructions for Gemini to improve response accuracy, select appropriate expressions, reinforce information, handle errors, optimize outlines, respond flexibly, maximize context window utilization, specify and break down tasks, unify language, avoid misinformation, provide independent opinions, and introduce a feedback loop.",
-			"tags": [
-				"custom-instructions",
-				"gemini",
-				"core-behavior"
-			],
-			"author": "かずゆき"
-		},
-		{
-			"path": ".clinerules/tool/Ai-memory-management.md",
-			"version": "1.0",
-			"description": "A prompt for registering information in the AI agent's long-term memory system, OpenMemory, in multiple languages. It converts diverse Japanese information into concise and essential English memories for high-precision search.",
-			"tags": [
-				"ai",
-				"memory-management",
-				"open-memory"
-			],
-			"author": "かずゆき"
 		},
 		{
 			"path": ".clinerules/tool/mcp/mcp-server-setup-guidelines.md",
@@ -657,16 +633,24 @@
 			"author": "Reco & Jun"
 		},
 		{
-			"path": ".clinerules/tool/GitHub/github-trouble-shooting.md",
-			"version": "1.0",
-			"description": "GitHubのMCPサーバー利用時のトラブルシューティング",
+			"path": ".clinerules/tool/mcp/obsidian-troubleshooting.md",
+			"version": "1.1",
+			"description": "Troubleshooting guide for Obsidian MCP server usage",
 			"tags": [
 				"mcp",
 				"server",
-				"github",
-				"troubleshooting"
+				"obsidian",
+				"troubleshooting",
+				"トラブルシューティング"
 			],
 			"author": "Reco & Jun"
+		},
+		{
+			"path": ".clinerules/workflows/create-clinerule.md",
+			"version": "1.0",
+			"description": "新しい.clinerulesファイルを作成し、rules-manifest.jsonに登録するまでの標準的なワークフローだよ。",
+			"tags": [],
+			"author": "Reco"
 		}
 	]
 }

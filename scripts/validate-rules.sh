@@ -112,6 +112,15 @@ validate_frontmatter() {
         errors_found=true
     fi
     
+    # Check for broken links
+    local broken_links_output=$(python3 "$BASE_DIR/scripts/check_links.py" "$file" 2>&1)
+    if [[ $? -ne 0 ]]; then
+        echo -e "${RED}ERROR${NC}: Broken links found:"
+        echo "$broken_links_output" | sed 's/^/  /'
+        ((ERRORS++))
+        errors_found=true
+    fi
+
     if [[ "$errors_found" == false ]]; then
         echo -e "${GREEN}OK${NC}"
         ((VALID_FILES++))
